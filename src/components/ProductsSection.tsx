@@ -10,7 +10,7 @@ const ProductsSection = () => {
       id: 1,
       name: "RICE BRAN OIL",
       description: "Premium rice bran oil with Oryzanol 10000+ ppm, rich in vitamins A, D & E",
-      image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=500",
+      image: "/ricebransoil.png",
       features: ["WITH VITAMINS A,D&E", "Oryzanol 10000+ ppm", "Physically Refined", "Heart Healthy"],
       rating: 4.9,
       reviews: 1250,
@@ -20,7 +20,7 @@ const ProductsSection = () => {
       id: 2,
       name: "MUSTARD OIL",
       description: "Traditional cold-pressed mustard oil for authentic Indian cooking",
-      image: "https://images.pexels.com/photos/2372978/pexels-photo-2372978.jpeg?auto=compress&cs=tinysrgb&w=500",
+      image: "/mustardoil.png",
       features: ["Cold Pressed", "Traditional Method", "Rich Flavor", "Natural Preservative"],
       rating: 4.8,
       reviews: 980,
@@ -28,14 +28,15 @@ const ProductsSection = () => {
     },
     {
       id: 3,
-      name: "PREMIUM MUSTARD OIL",
-      description: "Premium grade mustard oil with enhanced flavor and purity",
-      image: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=500",
-      features: ["Premium Grade", "Enhanced Flavor", "High Purity", "Traditional Process"],
-      rating: 4.9,
-      reviews: 1100,
-      badge: "Premium"
+      name: "KACCHI GHANI MUSTARD OIL",
+      description: "Traditional cold-pressed mustard oil for authentic Indian cooking",
+      image: "/kachighani.png",
+      features: ["Cold Pressed", "Traditional Method", "Rich Flavor", "Natural Preservative"],
+      rating: 4.8,
+      reviews: 980,
+      badge: "Popular"
     },
+
     {
       id: 4,
       name: "SOYBEAN OIL",
@@ -50,12 +51,13 @@ const ProductsSection = () => {
       id: 5,
       name: "SUNFLOWER OIL",
       description: "Pure sunflower oil for healthy cooking and frying",
-      image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=500",
+      image: "/sunfloweroil.png",
       features: ["100% Pure", "Heart Healthy", "High Smoke Point", "Rich in Vitamin E"],
       rating: 4.6,
       reviews: 720,
       badge: "Pure"
-    }
+    },
+
   ];
 
   useEffect(() => {
@@ -123,27 +125,29 @@ const ProductsSection = () => {
                 transition={{ duration: 0.6 }}
                               >
                 <div className="flex flex-col lg:flex-row items-center justify-center h-full gap-12">
-                   {/* Product Image in Drop Shape */}
+                   {/* Product Image Container */}
                    <motion.div
                      className="relative"
                      whileHover={{ scale: 1.05 }}
                    >
                      <div className="relative">
-                       {/* Drop Shape Container */}
+                       {/* Image Container with Rounded Corners */}
                        <div className="w-80 h-80 relative">
-                         <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-full blur-3xl" />
+                         <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-3xl blur-3xl" />
                          <div 
-                           className="w-full h-full bg-gradient-to-br from-yellow-100 to-orange-100 rounded-full border-4 border-yellow-300/50 shadow-2xl overflow-hidden"
-                           style={{
-                             clipPath: "polygon(50% 0%, 100% 20%, 100% 80%, 50% 100%, 0% 80%, 0% 20%)"
-                           }}
+                           className="w-full h-full bg-gradient-to-br from-yellow-100 to-orange-100 rounded-3xl border-4 border-yellow-300/50 shadow-2xl overflow-hidden"
                          >
                           <img
                             src={product.image}
                             alt={product.name}
-                            className="w-full h-full object-cover"
+                            className="w-full h-full object-contain p-4"
+                            style={{
+                              objectPosition: 'center',
+                              maxWidth: '100%',
+                              maxHeight: '100%'
+                            }}
                           />
-                          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent rounded-3xl" />
                         </div>
                         
                         {/* Badge */}
@@ -234,7 +238,7 @@ const ProductsSection = () => {
               <motion.button
                 key={product.id}
                 onClick={() => setCurrentProductIndex(index)}
-                className={`relative w-16 h-16 rounded-full overflow-hidden border-2 transition-all duration-300 ${
+                className={`relative w-16 h-16 rounded-2xl overflow-hidden border-2 transition-all duration-300 ${
                   index === currentProductIndex 
                     ? 'border-yellow-500 scale-110' 
                     : 'border-gray-300 hover:border-yellow-400'
@@ -244,7 +248,7 @@ const ProductsSection = () => {
                 <img
                   src={product.image}
                   alt={product.name}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain p-1"
                 />
                 {index === currentProductIndex && (
                   <motion.div

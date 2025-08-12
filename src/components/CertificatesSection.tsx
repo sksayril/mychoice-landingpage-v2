@@ -10,7 +10,7 @@ const CertificatesSection = () => {
       id: 1,
       name: "FSSAI Certification",
       description: "Food Safety and Standards Authority of India certification ensuring food safety compliance",
-      image: "https://images.pexels.com/photos/4110404/pexels-photo-4110404.jpeg?auto=compress&cs=tinysrgb&w=500",
+      image: "https://media.lendingkart.com/wp-content/uploads/2019/09/fssai.jpg",
       features: ["Food Safety Compliant", "Government Approved", "Quality Assured", "Regular Audits"],
       validity: "Valid until 2025",
       badge: "Government Certified",
@@ -20,7 +20,7 @@ const CertificatesSection = () => {
       id: 2,
       name: "Halal India Certification",
       description: "Halal certification ensuring products meet Islamic dietary requirements and standards",
-      image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=500",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDwMFjNPO95j16_CBuvV_hvOWgAJzOjdNafQ&s",
       features: ["Halal Compliant", "Islamic Standards", "Religious Approval", "Global Recognition"],
       validity: "Valid until 2025",
       badge: "Halal Certified",
@@ -30,32 +30,32 @@ const CertificatesSection = () => {
       id: 3,
       name: "ISO 22000 Certification",
       description: "International Organization for Standardization food safety management system certification",
-      image: "https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=500",
+      image: "https://5.imimg.com/data5/JK/BR/RG/SELLER-1781089/iso-22000-2018-certification-service-500x500.jpeg",
       features: ["International Standard", "Food Safety Management", "Global Recognition", "Quality Control"],
       validity: "Valid until 2025",
       badge: "ISO Certified",
       emoji: "🏆"
-    },
-    {
-      id: 4,
-      name: "Organic Certification",
-      description: "Certified organic products meeting strict organic farming and processing standards",
-      image: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=500",
-      features: ["100% Organic", "No Chemicals", "Natural Process", "Eco-Friendly"],
-      validity: "Valid until 2025",
-      badge: "Organic Certified",
-      emoji: "⭐"
-    },
-    {
-      id: 5,
-      name: "GMP Certification",
-      description: "Good Manufacturing Practice certification ensuring highest quality manufacturing standards",
-      image: "https://images.pexels.com/photos/2372978/pexels-photo-2372978.jpeg?auto=compress&cs=tinysrgb&w=500",
-      features: ["Good Manufacturing", "Quality Standards", "Process Control", "Safety Assured"],
-      validity: "Valid until 2025",
-      badge: "GMP Certified",
-      emoji: "📄"
     }
+    // {
+    //   id: 4,
+    //   name: "Organic Certification",
+    //   description: "Certified organic products meeting strict organic farming and processing standards",
+    //   image: "https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=500",
+    //   features: ["100% Organic", "No Chemicals", "Natural Process", "Eco-Friendly"],
+    //   validity: "Valid until 2025",
+    //   badge: "Organic Certified",
+    //   emoji: "⭐"
+    // },
+    // {
+    //   id: 5,
+    //   name: "GMP Certification",
+    //   description: "Good Manufacturing Practice certification ensuring highest quality manufacturing standards",
+    //   image: "https://images.pexels.com/photos/2372978/pexels-photo-2372978.jpeg?auto=compress&cs=tinysrgb&w=500",
+    //   features: ["Good Manufacturing", "Quality Standards", "Process Control", "Safety Assured"],
+    //   validity: "Valid until 2025",
+    //   badge: "GMP Certified",
+    //   emoji: "📄"
+    // }
   ];
 
   useEffect(() => {

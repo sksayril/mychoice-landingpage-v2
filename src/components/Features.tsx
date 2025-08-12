@@ -18,25 +18,25 @@ const Features = () => {
       emoji: '🌿',
       title: 'Organic & Natural',
       description: 'Sourced from the finest organic ingredients with no harmful chemicals or additives.',
-      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=500'
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwdxxxsOXuhJRGKu7ftBcAun7Er-5EyfJA1g&s'
     },
     {
       emoji: '🏆',
       title: 'Premium Quality',
       description: 'Award-winning products that meet the highest industry standards and certifications.',
-      image: 'https://images.pexels.com/photos/4110404/pexels-photo-4110404.jpeg?auto=compress&cs=tinysrgb&w=500'
+      image: 'https://static.vecteezy.com/system/resources/previews/027/158/675/non_2x/premium-quality-golden-design-badge-collection-vector.jpg'
     },
     {
       emoji: '🚛',
       title: 'Traditional Excellence',
       description: 'Time-honored methods and traditional processes ensure authentic taste and quality.',
-      image: 'https://images.pexels.com/photos/1095814/pexels-photo-1095814.jpeg?auto=compress&cs=tinysrgb&w=500'
+      image: 'https://images.squarespace-cdn.com/content/63aa0a7988b0247733a4e325/16717410-e117-47ac-b0bf-ff2429b74ce4/TraditionalExcellenceLogo1.png?content-type=image%2Fpng'
     },
     {
       emoji: '🛡️',
       title: 'Quality Assured',
       description: 'Rigorous testing and quality control processes guarantee product safety and purity.',
-      image: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=500'
+      image: 'https://as1.ftcdn.net/jpg/00/28/25/10/1000_F_28251020_yeQXkMX4698gypnWsAd1GgmlsWLhKfT9.jpg'
     }
   ];
 
