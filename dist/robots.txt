@@ -1,0 +1,127 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://my-choice.co.in/sitemap.xml
+
+# Crawl-delay for all bots
+Crawl-delay: 1
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 1
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 1
+
+# Block specific directories and files
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+Disallow: /cache/
+Disallow: /logs/
+Disallow: /backup/
+Disallow: /config/
+Disallow: /includes/
+Disallow: /vendor/
+Disallow: /node_modules/
+Disallow: /.env
+Disallow: /.git/
+Disallow: /.htaccess
+Disallow: /error_log
+Disallow: /access_log
+
+# Block specific file types
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+Disallow: /*.ppt$
+Disallow: /*.pptx$
+Disallow: /*.zip$
+Disallow: /*.rar$
+Disallow: /*.tar$
+Disallow: /*.gz$
+
+# Allow important file types
+Allow: /*.html$
+Allow: /*.htm$
+Allow: /*.xml$
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.ico$
+Allow: /*.webp$
+
+# Block search and filter pages
+Disallow: /search?
+Disallow: /filter?
+Disallow: /sort?
+Disallow: /page?
+
+# Allow specific search patterns
+Allow: /products/
+Allow: /blogs/
+Allow: /recipes/
+Allow: /about/
+Allow: /contact/
+Allow: /csr/
+Allow: /certificates/
+
+# Block admin and user areas
+Disallow: /login/
+Disallow: /register/
+Disallow: /password/
+Disallow: /reset/
+Disallow: /profile/
+Disallow: /dashboard/
+Disallow: /account/
+
+# Block API endpoints
+Disallow: /api/
+Disallow: /rest/
+Disallow: /graphql/
+
+# Block tracking and analytics
+Disallow: /analytics/
+Disallow: /tracking/
+Disallow: /stats/
+
+# Block development files
+Disallow: /dev/
+Disallow: /test/
+Disallow: /staging/
+Disallow: /beta/
+
+# Allow sitemap and important files
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /manifest.json
+Allow: /favicon.ico
+Allow: /logo.png
+
+# Host directive
+Host: https://my-choice.co.in
