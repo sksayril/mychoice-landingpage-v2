@@ -1,0 +1,77 @@
+/* Bengali Font Support */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global yellow background for entire website */
+html, body, #root {
+  background-color: #fefce8 !important; /* yellow-50 */
+  min-height: 100vh;
+  font-family: 'Noto Sans Bengali', 'Arial', sans-serif;
+}
+
+/* Ensure all main containers inherit the yellow background */
+body {
+  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 50%, #fde68a 100%) !important;
+  background-attachment: fixed;
+}
+
+/* Override any white backgrounds in components */
+.bg-white {
+  background-color: #fefce8 !important;
+}
+
+/* Ensure sections maintain yellow theme */
+section {
+  background-color: transparent !important;
+}
+
+/* Custom yellow background classes */
+.bg-yellow-theme {
+  background: linear-gradient(135deg, #fefce8 0%, #fef3c7 50%, #fde68a 100%);
+}
+
+.bg-yellow-light {
+  background-color: #fefce8;
+}
+
+.bg-yellow-medium {
+  background-color: #fef3c7;
+}
+
+.bg-yellow-dark {
+  background-color: #fde68a;
+}
+
+/* Bengali Font Classes */
+.font-bengali {
+  font-family: 'Noto Sans Bengali', 'Arial', sans-serif;
+}
+
+.font-bengali-light {
+  font-family: 'Noto Sans Bengali', 'Arial', sans-serif;
+  font-weight: 300;
+}
+
+.font-bengali-regular {
+  font-family: 'Noto Sans Bengali', 'Arial', sans-serif;
+  font-weight: 400;
+}
+
+.font-bengali-medium {
+  font-family: 'Noto Sans Bengali', 'Arial', sans-serif;
+  font-weight: 500;
+}
+
+.font-bengali-semibold {
+  font-family: 'Noto Sans Bengali', 'Arial', sans-serif;
+  font-weight: 600;
+}
+
+.font-bengali-bold {
+  font-family: 'Noto Sans Bengali', 'Arial', sans-serif;
+  font-weight: 700;
+}
+    
