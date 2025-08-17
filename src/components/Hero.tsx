@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 
 const Hero = () => {
+  const navigate = useNavigate();
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
@@ -82,6 +84,55 @@ const Hero = () => {
         ))}
       </div>
 
+      {/* Grand Opening Celebration Effects */}
+      <div className="absolute inset-0 z-10 pointer-events-none">
+        {/* Celebration Emojis */}
+        {['🎉', '🎊', '✨', '💫', '🌟', '🎈'].map((emoji, i) => (
+          <motion.div
+            key={i}
+            className="absolute text-2xl sm:text-3xl"
+            style={{
+              left: `${10 + (i * 15)}%`,
+              top: `${20 + (i * 10)}%`,
+            }}
+            animate={{
+              y: [0, -30, 0],
+              rotate: [0, 360],
+              scale: [1, 1.2, 1],
+            }}
+            transition={{
+              duration: 4,
+              repeat: Infinity,
+              delay: i * 0.5,
+              ease: "easeInOut"
+            }}
+          >
+            {emoji}
+          </motion.div>
+        ))}
+
+        {/* Sparkle Effects */}
+        {[...Array(15)].map((_, i) => (
+          <motion.div
+            key={`sparkle-${i}`}
+            className="absolute w-1 h-1 bg-yellow-300 rounded-full"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+            animate={{
+              scale: [0, 1, 0],
+              opacity: [0, 1, 0],
+            }}
+            transition={{
+              duration: 2,
+              repeat: Infinity,
+              delay: Math.random() * 2,
+            }}
+          />
+        ))}
+      </div>
+
       {/* Content */}
       <motion.div
         style={{ y, opacity }}
@@ -95,9 +146,24 @@ const Hero = () => {
             className="max-w-4xl mx-auto"
           >
             <motion.div variants={itemVariants} className="mb-4 sm:mb-6">
-              <span className="inline-block bg-yellow-500/20 text-yellow-300 px-3 py-2 sm:px-4 rounded-full text-xs sm:text-sm font-medium backdrop-blur-sm">
-                Premium Quality Oil Products
-              </span>
+              <motion.div
+                className="inline-block bg-gradient-to-r from-yellow-500/20 to-orange-500/20 text-yellow-300 px-4 py-2 sm:px-6 sm:py-3 rounded-full text-xs sm:text-sm font-medium backdrop-blur-sm border border-yellow-400/30"
+                animate={{
+                  scale: [1, 1.05, 1],
+                  boxShadow: [
+                    "0 0 0 rgba(245, 158, 11, 0.4)",
+                    "0 0 20px rgba(245, 158, 11, 0.8)",
+                    "0 0 0 rgba(245, 158, 11, 0.4)"
+                  ]
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  ease: "easeInOut"
+                }}
+              >
+                🎉 GRAND OPENING - Premium Quality Oil Products 🎉
+              </motion.div>
             </motion.div>
 
             <motion.h1
@@ -124,6 +190,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12"
             >
               <motion.button
+                onClick={() => navigate('/products')}
                 className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-2xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}

@@ -7,6 +7,8 @@ import Features from '../components/Features';
 import ProductsSection from '../components/ProductsSection';
 import CertificatesSection from '../components/CertificatesSection';
 import Testimonials from '../components/Testimonials';
+import GrandOpeningCelebration from '../components/GrandOpeningCelebration';
+import FloatingCelebrationButton from '../components/FloatingCelebrationButton';
 
 const Home = () => {
   return (
@@ -16,6 +18,8 @@ const Home = () => {
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
     >
+      <GrandOpeningCelebration />
+      <FloatingCelebrationButton />
       <Hero />
       <CustomerStats />
       <Services />
