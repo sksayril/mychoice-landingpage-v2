@@ -1,10 +1,8 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 
 
 const Hero = () => {
-  const navigate = useNavigate();
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
@@ -85,8 +83,8 @@ const Hero = () => {
       </div>
 
       {/* Grand Opening Celebration Effects */}
-      <div className="absolute inset-0 z-10 pointer-events-none">
-        {/* Celebration Emojis */}
+      {/* <div className="absolute inset-0 z-10 pointer-events-none">
+       
         {['🎉', '🎊', '✨', '💫', '🌟', '🎈'].map((emoji, i) => (
           <motion.div
             key={i}
@@ -111,7 +109,6 @@ const Hero = () => {
           </motion.div>
         ))}
 
-        {/* Sparkle Effects */}
         {[...Array(15)].map((_, i) => (
           <motion.div
             key={`sparkle-${i}`}
@@ -131,7 +128,7 @@ const Hero = () => {
             }}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Content */}
       <motion.div
@@ -190,7 +187,6 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12"
             >
               <motion.button
-                onClick={() => navigate('/products')}
                 className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-2xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
