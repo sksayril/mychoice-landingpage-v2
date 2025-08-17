@@ -8,14 +8,14 @@ const Services = () => {
 
   const services = [
     {
-      emoji: '🛢️',
+      emoji: '💧',
       title: 'Premium Oil Products',
       description: 'High-quality cooking oils, industrial lubricants, and specialty oils crafted with precision.',
       features: ['Pure & Natural', '100% Quality Assured', 'Multiple Variants'],
       color: 'from-yellow-400 to-yellow-600'
     },
     {
-      emoji: '🚛',
+      emoji: '🏃',
       title: 'Fast Delivery',
       description: 'Quick and reliable delivery services to get your products to you when you need them.',
       features: ['Same Day Delivery', 'Nationwide Coverage', 'Real-time Tracking'],

@@ -36,18 +36,18 @@ const Navbar = () => {
           : 'bg-transparent'
       }`}
     >
-      <div className="container mx-auto px-6">
-        <div className="flex items-center justify-between h-20">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="flex items-center justify-between h-16 sm:h-20">
           <motion.div 
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link to="/">
+            <Link to="/" className="flex items-center">
               <motion.img 
                 src="/logo.png"
                 alt="MyChoice Logo"
-                className={`h-25 w-40 ${scrolled ? '' : 'drop-shadow-lg'}`}
+                className={`h-20 w-30 sm:h-20 sm:w-auto max-w-[160px] sm:max-w-[200px] ${scrolled ? '' : 'drop-shadow-lg'}`}
                 whileHover={{ scale: 1.1 }}
               />
             </Link>
@@ -62,7 +62,7 @@ const Navbar = () => {
                 className="relative group"
               >
                 <motion.span
-                  className={`text-sm font-medium transition-colors duration-200 ${
+                  className={`text-base lg:text-lg font-semibold transition-colors duration-200 ${
                     location.pathname === item.path
                       ? 'text-green-600'
                       : scrolled 
@@ -93,7 +93,7 @@ const Navbar = () => {
             
             {/* Become a Distributor Button */}
             <motion.button
-              className={`px-6 py-2 rounded-full font-semibold text-sm transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full font-semibold text-base lg:text-lg transition-all duration-300 ${
                 scrolled 
                   ? 'bg-gradient-to-r from-green-500 to-yellow-500 text-white hover:from-green-600 hover:to-yellow-600 shadow-lg hover:shadow-xl' 
                   : 'bg-gradient-to-r from-green-500 to-yellow-500 text-white hover:from-green-600 hover:to-yellow-600 shadow-lg hover:shadow-xl'
@@ -101,18 +101,18 @@ const Navbar = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              Become a Distributor
+              Become a Partner
             </motion.button>
           </div>
 
           {/* Mobile Menu Button */}
           <motion.button
-            className={`lg:hidden p-2 ${scrolled ? 'text-green-700' : 'text-black'}`}
+            className={`lg:hidden p-2 rounded-lg ${scrolled ? 'text-green-700 hover:bg-green-100' : 'text-black hover:bg-black/10'}`}
             onClick={() => setIsOpen(!isOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-5 h-5 sm:w-6 sm:h-6" /> : <Menu className="w-5 h-5 sm:w-6 sm:h-6" />}
           </motion.button>
         </div>
 
@@ -123,7 +123,7 @@ const Navbar = () => {
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
               exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-green-50 border-t border-green-200"
+              className="lg:hidden bg-green-50/95 backdrop-blur-md border-t border-green-200 shadow-lg"
             >
               {navItems.map((item, index) => (
                 <motion.div
@@ -137,7 +137,7 @@ const Navbar = () => {
                     className="block py-3 px-4 text-green-700 hover:bg-green-100 hover:text-green-600 transition-colors relative group"
                     onClick={() => setIsOpen(false)}
                   >
-                    <span className="relative z-10">{item.name}</span>
+                    <span className="relative z-10 font-medium">{item.name}</span>
                     <motion.div
                       className="absolute inset-0 bg-yellow-200 opacity-0 group-hover:opacity-20 transition-opacity duration-200"
                       initial={{ scaleX: 0 }}
@@ -161,7 +161,7 @@ const Navbar = () => {
                   whileTap={{ scale: 0.98 }}
                   onClick={() => setIsOpen(false)}
                 >
-                  Become a Distributor
+                  Become a Partner
                 </motion.button>
               </motion.div>
             </motion.div>

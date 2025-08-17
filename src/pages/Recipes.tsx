@@ -218,7 +218,7 @@ const Recipes = () => {
       className="min-h-screen"
     >
       {/* Hero Section with Background Video */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden z-0">
         <video
           ref={videoRef}
           autoPlay
@@ -267,19 +267,19 @@ const Recipes = () => {
       </section>
 
       {/* Recipes Section */}
-      <section id="recipes-section" className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-100">
+      <section id="recipes-section" className="relative -mt-32 pt-32 pb-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-100 z-10">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ y: -30, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="text-center mb-16"
+            className="text-center mb-16 mt-8"
           >
-            <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent font-bengali">
+            <h2 className="text-4xl md:text-5xl font-bold mb-8 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent font-bengali leading-relaxed px-4 whitespace-normal overflow-visible recipe-title">
               সুস্বাদু রেসিপি
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto font-bengali">
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto font-bengali leading-loose px-6 whitespace-normal overflow-visible recipe-description">
               আমাদের প্রিমিয়াম তেল দিয়ে তৈরি ঐতিহ্যবাহী বাঙালি রান্না
             </p>
           </motion.div>
@@ -312,15 +312,15 @@ const Recipes = () => {
                     </div>
                   </div>
 
-                  <div className="p-6">
-                    <h3 className="text-xl font-bold mb-2 text-gray-800 font-bengali">
+                  <div className="p-6 flex flex-col h-full">
+                    <h3 className="text-xl font-bold mb-3 text-gray-800 font-bengali leading-relaxed min-h-[3.5rem] flex items-start px-2 whitespace-normal overflow-visible recipe-title">
                       {recipe.title}
                     </h3>
-                    <p className="text-sm text-gray-500 mb-4 font-bengali">
+                    <p className="text-sm text-gray-500 mb-4 font-bengali leading-relaxed px-2 whitespace-normal overflow-visible recipe-description">
                       {recipe.englishTitle}
                     </p>
                     
-                    <div className="flex items-center justify-between text-sm text-gray-600 mb-4">
+                    <div className="flex items-center justify-between text-sm text-gray-600 mb-6 flex-wrap gap-2">
                       <div className="flex items-center">
                         <Clock className="w-4 h-4 mr-1" />
                         <span className="font-bengali">{recipe.time}</span>
@@ -381,16 +381,16 @@ const Recipes = () => {
               >
                 <X className="w-6 h-6" />
               </button>
-              <div className="absolute bottom-4 left-4 text-white">
-                <h2 className="text-3xl font-bold font-bengali">{selectedRecipe.title}</h2>
-                <p className="text-lg opacity-90 font-bengali">{selectedRecipe.englishTitle}</p>
-              </div>
+                                <div className="absolute bottom-4 left-4 text-white px-4">
+                    <h2 className="text-3xl font-bold font-bengali leading-relaxed whitespace-normal overflow-visible recipe-title">{selectedRecipe.title}</h2>
+                    <p className="text-lg opacity-90 font-bengali leading-loose whitespace-normal overflow-visible recipe-description">{selectedRecipe.englishTitle}</p>
+                  </div>
             </div>
 
             {/* Modal Content */}
             <div className="p-8">
               {/* Recipe Info */}
-              <div className="flex items-center justify-between mb-8 p-4 bg-yellow-50 rounded-2xl">
+              <div className="flex flex-wrap items-center justify-between mb-8 p-4 bg-yellow-50 rounded-2xl gap-3">
                 <div className="flex items-center">
                   <Clock className="w-5 h-5 mr-2 text-yellow-600" />
                   <span className="font-bengali">{selectedRecipe.time}</span>
@@ -412,18 +412,18 @@ const Recipes = () => {
 
               {/* Ingredients */}
               <div className="mb-8">
-                <h3 className="text-2xl font-bold mb-4 text-gray-800 font-bengali">উপকরণসমূহ</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <h3 className="text-2xl font-bold mb-6 text-gray-800 font-bengali">উপকরণসমূহ</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {selectedRecipe.ingredients.map((ingredient: string, index: number) => (
                     <motion.div
                       key={index}
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.1 }}
-                      className="flex items-center p-3 bg-gray-50 rounded-xl"
+                      className="flex items-start p-4 bg-gray-50 rounded-xl"
                     >
-                      <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3" />
-                      <span className="font-bengali">{ingredient}</span>
+                      <div className="w-2 h-2 bg-yellow-500 rounded-full mr-3 mt-2 flex-shrink-0" />
+                      <span className="font-bengali leading-loose">{ingredient}</span>
                     </motion.div>
                   ))}
                 </div>
@@ -431,7 +431,7 @@ const Recipes = () => {
 
               {/* Cooking Steps */}
               <div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-800 font-bengali">রান্নার ধাপসমূহ</h3>
+                <h3 className="text-2xl font-bold mb-6 text-gray-800 font-bengali">রান্নার ধাপসমূহ</h3>
                 
                 {/* Step Navigation */}
                 <div className="flex items-center justify-between mb-6">

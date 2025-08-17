@@ -57,33 +57,33 @@ const AboutUs = () => {
   ];
 
   const milestones = [
-    { year: '1999', title: 'Company Founded', description: 'Started as a small family business' },
-    { year: '2005', title: 'First Expansion', description: 'Expanded to 10 cities' },
-    { year: '2010', title: 'Quality Certification', description: 'Achieved ISO 9001 certification' },
-    { year: '2015', title: 'National Presence', description: 'Reached 50+ cities nationwide' },
-    { year: '2020', title: 'Digital Transformation', description: 'Launched online platform' },
+    { year: '2005', title: 'Company Founded', description: 'Started as a small family business' },
+    { year: '2010', title: 'First Expansion', description: 'Expanded to 10 cities' },
+    { year: '2015', title: 'Quality Certification', description: 'Achieved ISO 9001 certification' },
+    { year: '2020', title: 'National Presence', description: 'Reached 50+ cities nationwide' },
+    { year: '2023', title: 'Digital Transformation', description: 'Launched online platform' },
     { year: '2024', title: 'Market Leader', description: 'Serving 100+ cities with 50,000+ customers' }
   ];
 
   const teamMembers = [
     {
-      name: 'Rajesh Kumar',
+      name: 'MD Mohammed Ali',
       position: 'Founder & CEO',
       image: 'https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: '25+ years of experience in the oil industry'
     },
     {
-      name: 'Priya Sharma',
-      position: 'Head of Quality',
+      name: 'Avishekh pal',
+      position: 'Saled executive officer',
       image: 'https://images.pexels.com/photos/3777943/pexels-photo-3777943.jpeg?auto=compress&cs=tinysrgb&w=400',
       description: 'Ensuring the highest standards in every product'
     },
-    {
-      name: 'Amit Patel',
-      position: 'Operations Director',
-      image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400',
-      description: 'Managing efficient production and distribution'
-    }
+    // {
+    //   name: 'Amit Patel',
+    //   position: 'Operations Director',
+    //   image: 'https://images.pexels.com/photos/2379005/pexels-photo-2379005.jpeg?auto=compress&cs=tinysrgb&w=400',
+    //   description: 'Managing efficient production and distribution'
+    // }
   ];
 
   useEffect(() => {
@@ -152,7 +152,7 @@ const AboutUs = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto"
           >
-            For over two decades, we've been committed to providing the finest quality oils to families across the nation
+            For nearly two decades, we've been committed to providing the finest quality oils to families across the nation
           </motion.p>
           <motion.button
             initial={{ opacity: 0, y: 30 }}
@@ -301,7 +301,7 @@ const AboutUs = () => {
           >
             <h3 className="text-3xl font-bold text-gray-800">The Beginning</h3>
             <p className="text-gray-600 leading-relaxed">
-              Founded in 1999, MyChoice began as a small family business with a simple mission: to provide pure, 
+              Founded in 2005, MyChoice began as a small family business with a simple mission: to provide pure, 
               high-quality oils to Indian households. What started in a modest facility has grown into one of the 
               most trusted oil brands in the country.
             </p>

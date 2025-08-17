@@ -19,10 +19,42 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: '#', color: 'hover:text-blue-500' },
-    { icon: Twitter, href: '#', color: 'hover:text-sky-500' },
-    { icon: Instagram, href: '#', color: 'hover:text-pink-500' },
-    { icon: Linkedin, href: '#', color: 'hover:text-blue-600' }
+    { 
+      icon: Facebook, 
+      href: '#', 
+      name: 'Facebook',
+      bgGradient: 'from-blue-500 to-blue-600',
+      hoverGradient: 'from-blue-600 to-blue-700',
+      shadowColor: 'shadow-blue-500/50',
+      iconColor: 'text-white'
+    },
+    { 
+      icon: Twitter, 
+      href: '#', 
+      name: 'Twitter',
+      bgGradient: 'from-sky-400 to-sky-500',
+      hoverGradient: 'from-sky-500 to-sky-600',
+      shadowColor: 'shadow-sky-500/50',
+      iconColor: 'text-white'
+    },
+    { 
+      icon: Instagram, 
+      href: '#', 
+      name: 'Instagram',
+      bgGradient: 'from-pink-500 via-purple-500 to-orange-500',
+      hoverGradient: 'from-pink-600 via-purple-600 to-orange-600',
+      shadowColor: 'shadow-pink-500/50',
+      iconColor: 'text-white'
+    },
+    { 
+      icon: Linkedin, 
+      href: '#', 
+      name: 'LinkedIn',
+      bgGradient: 'from-blue-600 to-blue-700',
+      hoverGradient: 'from-blue-700 to-blue-800',
+      shadowColor: 'shadow-blue-600/50',
+      iconColor: 'text-white'
+    }
   ];
 
   return (
@@ -61,11 +93,26 @@ const Footer = () => {
                 <motion.a
                   key={index}
                   href={social.href}
-                  className={`w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center text-gray-400 ${social.color} transition-all duration-300`}
-                  whileHover={{ scale: 1.1, y: -2 }}
+                  className={`w-12 h-12 bg-gradient-to-br ${social.bgGradient} rounded-xl flex items-center justify-center ${social.iconColor} shadow-lg ${social.shadowColor} hover:shadow-xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1`}
+                  whileHover={{ 
+                    scale: 1.15, 
+                    y: -5,
+                    rotateY: 15,
+                    boxShadow: `0 20px 40px ${social.shadowColor.replace('shadow-', '').replace('/50', '')}`
+                  }}
                   whileTap={{ scale: 0.95 }}
+                  style={{
+                    transformStyle: 'preserve-3d',
+                    perspective: '1000px'
+                  }}
                 >
-                  <social.icon className="w-5 h-5" />
+                  <motion.div
+                    whileHover={{ rotateY: 180 }}
+                    transition={{ duration: 0.6 }}
+                    style={{ transformStyle: 'preserve-3d' }}
+                  >
+                    <social.icon className="w-6 h-6" />
+                  </motion.div>
                 </motion.a>
               ))}
             </div>
@@ -131,21 +178,21 @@ const Footer = () => {
                 whileHover={{ x: 5 }}
               >
                 <Phone className="w-5 h-5 text-yellow-500" />
-                <span>+91 98765 43210</span>
+                <span>+91 03345013784</span>
               </motion.div>
               <motion.div 
                 className="flex items-center space-x-3 text-gray-300"
                 whileHover={{ x: 5 }}
               >
                 <Mail className="w-5 h-5 text-yellow-500" />
-                <span>info@mychoice.com</span>
+                <span>info@my-choice.co.in</span>
               </motion.div>
               <motion.div 
                 className="flex items-start space-x-3 text-gray-300"
                 whileHover={{ x: 5 }}
               >
                 <MapPin className="w-5 h-5 text-yellow-500 mt-1" />
-                <span>123 Oil Street, Mumbai<br />Maharashtra, India</span>
+                <span>4, Netaji Subhash Road,2nd Floor, Charterd bank building<br /> Kolkata- 700001, India</span>
               </motion.div>
             </div>
           </motion.div>
@@ -172,7 +219,7 @@ const Footer = () => {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Become a Distributor</span>
+              <span>Become a Partner</span>
               <motion.span
                 animate={{ x: [0, 5, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
@@ -193,7 +240,7 @@ const Footer = () => {
           className="border-t border-gray-700 pt-8 flex flex-col md:flex-row items-center justify-between"
         >
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
-            © 2024 MyChoice. All rights reserved.
+            © 2025 MyChoice. All rights reserved.
           </p>
           <div className="flex space-x-6 text-sm">
             <motion.a 

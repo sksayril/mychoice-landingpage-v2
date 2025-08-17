@@ -85,24 +85,24 @@ const Hero = () => {
       {/* Content */}
       <motion.div
         style={{ y, opacity }}
-        className="relative z-20 min-h-screen flex items-center"
+        className="relative z-20 min-h-screen flex items-center pt-20 lg:pt-0"
       >
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 sm:px-6 w-full">
           <motion.div
             variants={containerVariants}
             initial="hidden"
             animate={isInView ? "visible" : "hidden"}
-            className="max-w-4xl"
+            className="max-w-4xl mx-auto"
           >
-            <motion.div variants={itemVariants} className="mb-6">
-              <span className="inline-block bg-yellow-500/20 text-yellow-300 px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm">
+            <motion.div variants={itemVariants} className="mb-4 sm:mb-6">
+              <span className="inline-block bg-yellow-500/20 text-yellow-300 px-3 py-2 sm:px-4 rounded-full text-xs sm:text-sm font-medium backdrop-blur-sm">
                 Premium Quality Oil Products
               </span>
             </motion.div>
 
             <motion.h1
               variants={itemVariants}
-              className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
             >
               Pure Excellence,{' '}
               <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
@@ -112,7 +112,7 @@ const Hero = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-xl text-gray-200 mb-8 max-w-2xl leading-relaxed"
+              className="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
             >
               Experience the finest quality oil products crafted with precision and care. 
               From kitchen essentials to industrial solutions, MyChoice delivers excellence 
@@ -121,10 +121,10 @@ const Hero = () => {
 
             <motion.div 
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-4 mb-12"
+              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12"
             >
               <motion.button
-                className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-8 py-4 rounded-full font-semibold text-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-2xl"
+                className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-2xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -138,11 +138,11 @@ const Hero = () => {
               </motion.button>
 
               <motion.button
-                className="border-2 border-white/30 text-white px-8 py-4 rounded-full font-semibold text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2 backdrop-blur-sm"
+                className="border-2 border-white/30 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2 backdrop-blur-sm"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="text-xl">▶️</span>
+                <span className="text-lg sm:text-xl">▶️</span>
                 <span>Watch Video</span>
               </motion.button>
             </motion.div>
@@ -150,7 +150,7 @@ const Hero = () => {
             {/* Features */}
             <motion.div 
               variants={itemVariants}
-              className="grid grid-cols-1 md:grid-cols-3 gap-6"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6"
             >
               {[
                 { emoji: '🏆', label: 'Premium Quality', desc: 'ISO Certified' },
@@ -159,20 +159,20 @@ const Hero = () => {
               ].map((feature, index) => (
                 <motion.div
                   key={feature.label}
-                  className="flex items-center space-x-4 bg-white/10 backdrop-blur-md rounded-xl p-4 border border-white/20"
+                  className="flex items-center space-x-3 sm:space-x-4 bg-white/10 backdrop-blur-md rounded-xl p-3 sm:p-4 border border-white/20"
                   whileHover={{ scale: 1.05, backgroundColor: 'rgba(255, 255, 255, 0.15)' }}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 1 + index * 0.2 }}
                 >
-                  <div className="bg-yellow-500/20 p-3 rounded-lg">
-                    <span className="text-2xl" style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}>
+                  <div className="bg-yellow-500/20 p-2 sm:p-3 rounded-lg flex-shrink-0">
+                    <span className="text-xl sm:text-2xl" style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}>
                       {feature.emoji}
                     </span>
                   </div>
-                  <div>
-                    <h3 className="text-white font-semibold">{feature.label}</h3>
-                    <p className="text-gray-300 text-sm">{feature.desc}</p>
+                  <div className="min-w-0 flex-1">
+                    <h3 className="text-white font-semibold text-sm sm:text-base">{feature.label}</h3>
+                    <p className="text-gray-300 text-xs sm:text-sm">{feature.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -183,7 +183,7 @@ const Hero = () => {
 
       {/* Scroll Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 2 }}

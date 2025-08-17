@@ -45,6 +45,47 @@ section {
   background-color: #fde68a;
 }
 
+/* Mobile-specific fixes */
+@media (max-width: 640px) {
+  /* Ensure proper spacing for fixed navbar */
+  .pt-20 {
+    padding-top: 5rem !important;
+  }
+  
+  /* Prevent horizontal overflow */
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  /* Ensure logo doesn't overflow */
+  .max-w-\[120px\] {
+    max-width: 120px !important;
+  }
+  
+  /* Improve mobile menu spacing */
+  .h-16 {
+    height: 4rem !important;
+  }
+}
+
+/* Ensure proper z-index stacking */
+.z-50 {
+  z-index: 50 !important;
+}
+
+.z-20 {
+  z-index: 20 !important;
+}
+
+.z-10 {
+  z-index: 10 !important;
+}
+
+.z-0 {
+  z-index: 0 !important;
+}
+
 /* Bengali Font Classes */
 .font-bengali {
   font-family: 'Noto Sans Bengali', 'Arial', sans-serif;
@@ -73,5 +114,37 @@ section {
 .font-bengali-bold {
   font-family: 'Noto Sans Bengali', 'Arial', sans-serif;
   font-weight: 700;
+}
+
+/* Fix Bengali text rendering issues */
+.font-bengali {
+  font-family: 'Noto Sans Bengali', 'Arial', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-feature-settings: "liga" 1, "kern" 1;
+  font-feature-settings: "liga" 1, "kern" 1;
+  word-spacing: 0.05em;
+  letter-spacing: 0.01em;
+}
+
+/* Ensure Bengali text doesn't get cut off */
+.font-bengali h1,
+.font-bengali h2,
+.font-bengali h3,
+.font-bengali p,
+.font-bengali span {
+  overflow: visible !important;
+  word-wrap: normal !important;
+  white-space: normal !important;
+  text-overflow: unset !important;
+}
+
+/* Specific fixes for recipe text */
+.recipe-title,
+.recipe-description {
+  overflow: visible !important;
+  word-wrap: normal !important;
+  white-space: normal !important;
+  text-overflow: unset !important;
+  line-height: 1.6 !important;
 }
     

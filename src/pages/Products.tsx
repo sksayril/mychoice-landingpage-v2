@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Droplets, Award, Leaf, Zap, Star, Flame, Heart, Shield, Globe } from 'lucide-react';
+import { Droplets, Award, Leaf, Zap, Star, Flame, Heart, Shield, Globe, ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Products = () => {
   const [language, setLanguage] = useState<'english' | 'bengali'>('english');
@@ -67,7 +67,11 @@ const Products = () => {
         english: 'Cooking Oil',
         bengali: 'রান্নার তেল'
       },
-      image: 'https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=500',
+      images: [
+        '/sunfloweroilpacket.png',
+        '/sunfloweroilbottle.png',
+        '/sunfloweroildrum.png'
+      ],
       price: '₹299',
       originalPrice: '₹399',
       features: {
@@ -89,7 +93,11 @@ const Products = () => {
         english: 'Health Oil',
         bengali: 'স্বাস্থ্য তেল'
       },
-      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=500',
+      images: [
+        '/ricebrandoilpacket.png',
+        '/ricebrandoilbottle.png',
+        '/ricebrandoildrum.png'
+      ],
       price: '₹189',
       originalPrice: '₹249',
       features: {
@@ -104,14 +112,18 @@ const Products = () => {
     {
       id: 3,
       name: {
-        english: 'Traditional Mustard Oil',
-        bengali: 'ঐতিহ্যগত সরিষার তেল'
+        english: 'Kachhi ghani Mustard Oil',
+        bengali: 'কাঁচি ঘানি সরিষার তেল'
       },
       category: {
-        english: 'Traditional Oil',
-        bengali: 'ঐতিহ্যগত তেল'
+        english: 'Kachhi ghani',
+        bengali: 'কাঁচি ঘানি সরিষার তেল'
       },
-      image: 'https://images.pexels.com/photos/2372978/pexels-photo-2372978.jpeg?auto=compress&cs=tinysrgb&w=500',
+      images: [
+        '/kachhighanimusterdoilpakcet.jpg',
+        '/kacchighanibottle.png',
+        '/kachhoighanidrum.png'
+      ],
       price: '₹159',
       originalPrice: '₹199',
       features: {
@@ -133,7 +145,11 @@ const Products = () => {
         english: 'Cooking Oil',
         bengali: 'রান্নার তেল'
       },
-      image: 'https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=500',
+      images: [
+        '/soyabeanoilpacket.png',
+        '/soyabeanoilbottle.png',
+        '/soyabinoildrum.png'
+      ],
       price: '₹179',
       originalPrice: '₹229',
       features: {
@@ -148,43 +164,51 @@ const Products = () => {
     {
       id: 5,
       name: {
-        english: 'Organic Coconut Oil',
-        bengali: 'জৈব নারকেল তেল'
+        english: 'Palm Oil',
+        bengali: 'পাম তেল'
       },
       category: {
-        english: 'Organic Oil',
-        bengali: 'জৈব তেল'
+        english: 'Cooking Oil',
+        bengali: 'রান্নার তেল'
       },
-      image: 'https://images.pexels.com/photos/33783/olive-oil-salad-dressing-cooking-olive.jpg?auto=compress&cs=tinysrgb&w=500',
-      price: '₹399',
-      originalPrice: '₹499',
+      images: [
+        '/plamoilpacket1.png',
+        '/plamoilbottle.png',
+        '/plamoildrum.png'
+      ],
+      price: '₹299',
+      originalPrice: '₹399',
       features: {
-        english: ['100% Organic', 'Cold Pressed', 'Rich in MCT', 'Natural Antibacterial'],
-        bengali: ['১০০% জৈব', 'ঠান্ডা চাপানো', 'এমসিটি সমৃদ্ধ', 'প্রাকৃতিক অ্যান্টিব্যাকটেরিয়াল']
+        english: ['High Smoke Point', 'Stable for Frying', 'Rich in Vitamin E', 'Natural Color'],
+        bengali: ['উচ্চ ধোঁয়া বিন্দু', 'ভাজার জন্য স্থিতিশীল', 'ভিটামিন ই সমৃদ্ধ', 'প্রাকৃতিক রঙ']
       },
-      icon: Leaf,
-      badge: 'organic',
-      rating: 4.9,
-      reviews: 980
+      icon: Flame,
+      badge: 'popular',
+      rating: 4.6,
+      reviews: 850
     },
     {
       id: 6,
       name: {
-        english: 'Pure Sesame Oil',
-        bengali: 'বিশুদ্ধ তিলের তেল'
+        english: 'Pure Mustard Oil',
+        bengali: 'বিশুদ্ধ সরিষার তেল'
       },
       category: {
         english: 'Traditional Oil',
         bengali: 'ঐতিহ্যগত তেল'
       },
-      image: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=500',
+      images: [
+        '/puremusterdoilpacket.png',
+        '/puremusterdoilbottle.png',
+        '/puremusterdoildrum.png'
+      ],
       price: '₹289',
       originalPrice: '₹359',
       features: {
-        english: ['Traditional Bengali', 'Rich Nutty Flavor', 'High Smoke Point', 'Antioxidant Rich'],
-        bengali: ['ঐতিহ্যগত বাংলা', 'সমৃদ্ধ বাদামি স্বাদ', 'উচ্চ ধোঁয়া বিন্দু', 'অ্যান্টিঅক্সিডেন্ট সমৃদ্ধ']
+        english: ['Cold Pressed', 'Traditional Method', 'Rich Flavor', 'Natural Preservative'],
+        bengali: ['ঠান্ডা চাপানো', 'ঐতিহ্যগত পদ্ধতি', 'সমৃদ্ধ স্বাদ', 'প্রাকৃতিক সংরক্ষক']
       },
-      icon: Award,
+      icon: Flame,
       badge: 'traditional',
       rating: 4.7,
       reviews: 650
@@ -521,7 +545,24 @@ const Products = () => {
     }
   };
 
-  const ProductCard = ({ product }: { product: any }) => (
+  const ProductCard = ({ product }: { product: any }) => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [imageLoaded, setImageLoaded] = useState(false);
+    const [imageError, setImageError] = useState(false);
+    
+    const nextImage = () => {
+      setCurrentImageIndex((prev) => (prev + 1) % product.images.length);
+      setImageLoaded(false);
+      setImageError(false);
+    };
+    
+    const prevImage = () => {
+      setCurrentImageIndex((prev) => (prev - 1 + product.images.length) % product.images.length);
+      setImageLoaded(false);
+      setImageError(false);
+    };
+    
+    return (
     <motion.div
       key={product.id}
       variants={cardVariants}
@@ -543,18 +584,83 @@ const Products = () => {
           className="absolute top-4 right-4 z-20 bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-3 py-1 rounded-full text-xs font-bold shadow-lg font-bengali"
           whileHover={{ scale: 1.1 }}
         >
-          {translations[language][product.badge]}
+          {translations[language][product.badge as keyof typeof translations[typeof language]]}
         </motion.div>
 
-        <div className="relative h-64 overflow-hidden">
+        <div className="relative h-64 overflow-hidden bg-gradient-to-br from-yellow-50 to-orange-50 border-b border-yellow-200">
           <motion.img
-            src={product.image}
+            src={product.images[currentImageIndex]}
             alt={product.name[language]}
-            className="w-full h-full object-cover"
-            whileHover={{ scale: 1.1 }}
+            className={`w-full h-full object-contain p-6 transition-opacity duration-300 ${
+              imageLoaded ? 'opacity-100' : 'opacity-0'
+            }`}
+            whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.6 }}
+            onLoad={() => setImageLoaded(true)}
+            onError={() => setImageError(true)}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
+          
+          {/* Loading state */}
+          {!imageLoaded && !imageError && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-yellow-50 to-orange-50">
+              <div className="text-center">
+                <div className="w-8 h-8 border-4 border-yellow-500 border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
+                <p className="text-sm text-gray-600 font-bengali">Loading...</p>
+              </div>
+            </div>
+          )}
+          
+          {/* Fallback placeholder if image fails to load */}
+          {imageError && (
+            <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-yellow-100 to-orange-100">
+              <div className="text-center">
+                <product.icon className="w-16 h-16 text-yellow-500 mx-auto mb-2" />
+                <p className="text-sm text-gray-600 font-bengali">{product.name[language]}</p>
+              </div>
+            </div>
+          )}
+          
+          <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent pointer-events-none" />
+          
+          {/* Image Navigation */}
+          {product.images.length > 1 && (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  prevImage();
+                }}
+                className="absolute left-3 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm text-gray-700 p-2 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 z-20 border border-gray-200"
+              >
+                <ChevronLeft className="w-4 h-4" />
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  nextImage();
+                }}
+                className="absolute right-3 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm text-gray-700 p-2 rounded-full hover:bg-white hover:shadow-lg transition-all duration-300 z-20 border border-gray-200"
+              >
+                <ChevronRight className="w-4 h-4" />
+              </button>
+              
+              {/* Image Dots */}
+              <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 flex space-x-2 z-20">
+                {product.images.map((_: string, index: number) => (
+                  <button
+                    key={index}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      setCurrentImageIndex(index);
+                    }}
+                    className={`w-3 h-3 rounded-full transition-all duration-300 border-2 border-white shadow-sm ${
+                      index === currentImageIndex ? 'bg-yellow-500' : 'bg-white/60'
+                    }`}
+                  />
+                ))}
+              </div>
+            </>
+          )}
           
           {/* Rating */}
           <div className="absolute bottom-4 left-4 bg-white/90 backdrop-blur-sm rounded-lg px-2 py-1 flex items-center space-x-1">
@@ -573,10 +679,10 @@ const Products = () => {
         </div>
 
         <div className="p-6 relative z-10">
-          <div className="text-sm text-yellow-600 font-semibold mb-2 font-bengali">
+          <div className="text-sm text-yellow-600 font-semibold mb-2 font-bengali whitespace-normal overflow-visible">
             {product.category[language]}
           </div>
-          <h3 className="text-xl font-bold mb-3 text-gray-800 font-bengali leading-relaxed">
+          <h3 className="text-xl font-bold mb-3 text-gray-800 font-bengali leading-relaxed whitespace-normal overflow-visible recipe-title">
             {product.name[language]}
           </h3>
           
@@ -587,15 +693,15 @@ const Products = () => {
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="flex items-center text-sm text-gray-700 font-bengali"
+                className="flex items-center text-sm text-gray-700 font-bengali whitespace-normal overflow-visible"
               >
-                <div className="w-2 h-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full mr-3" />
-                {feature}
+                <div className="w-2 h-2 bg-gradient-to-r from-yellow-500 to-orange-500 rounded-full mr-3 flex-shrink-0" />
+                <span className="leading-relaxed">{feature}</span>
               </motion.div>
             ))}
           </div>
 
-          <motion.button
+          {/* <motion.button
             className="w-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white py-4 rounded-xl font-bold hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl relative overflow-hidden font-bengali"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
@@ -607,7 +713,7 @@ const Products = () => {
               whileHover={{ x: '100%' }}
               transition={{ duration: 0.6 }}
             />
-          </motion.button>
+          </motion.button> */}
         </div>
 
         {/* External Glow */}
@@ -619,7 +725,8 @@ const Products = () => {
         />
       </motion.div>
     </motion.div>
-  );
+    );
+  };
 
   return (
     <motion.div
@@ -651,12 +758,12 @@ const Products = () => {
           initial={{ y: -30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-16 mt-8"
         >
-          <h1 className="text-5xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-yellow-600 via-orange-500 to-yellow-600 bg-clip-text text-transparent font-bengali">
+          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-yellow-600 via-orange-500 to-yellow-600 bg-clip-text text-transparent font-bengali leading-relaxed px-4 whitespace-normal overflow-visible recipe-title">
             {translations[language].title}
           </h1>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto font-medium font-bengali">
+          <p className="text-xl text-gray-700 max-w-4xl mx-auto font-medium font-bengali leading-loose px-6 whitespace-normal overflow-visible recipe-description">
             {translations[language].subtitle}
           </p>
         </motion.div>
@@ -669,10 +776,10 @@ const Products = () => {
           className="mb-20"
         >
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent font-bengali">
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent font-bengali leading-relaxed px-4 whitespace-normal overflow-visible recipe-title">
               {translations[language].oilsTitle}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-bengali">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-bengali leading-loose px-6 whitespace-normal overflow-visible recipe-description">
               {translations[language].oilsSubtitle}
             </p>
           </div>
@@ -690,16 +797,16 @@ const Products = () => {
         </motion.div>
 
         {/* Masalas Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent font-bengali">
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-orange-600 to-red-600 bg-clip-text text-transparent font-bengali leading-relaxed px-4 whitespace-normal overflow-visible recipe-title">
               {translations[language].masalasTitle}
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto font-bengali">
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto font-bengali leading-loose px-6 whitespace-normal overflow-visible recipe-description">
               {translations[language].masalasSubtitle}
             </p>
           </div>
@@ -714,7 +821,7 @@ const Products = () => {
               <ProductCard key={product.id} product={product} />
             ))}
           </motion.div>
-        </motion.div>
+        </motion.div> */}
       </div>
     </motion.div>
   );

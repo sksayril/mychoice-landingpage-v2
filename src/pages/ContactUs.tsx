@@ -6,20 +6,21 @@ const ContactUs = () => {
     {
       emoji: '📞',
       title: 'Phone',
-      details: '+91 98765 43210',
+      details: '03345013784',
       subtitle: 'Mon-Fri 9AM-6PM'
     },
     {
       emoji: '📧',
       title: 'Email',
-      details: 'info@mychoice.com',
+      details: 'info@my-choice.co.in',
       subtitle: 'We reply within 24hrs'
     },
+    
     {
       emoji: '📍',
       title: 'Address',
-      details: '123 Oil Street, Mumbai',
-      subtitle: 'Maharashtra, India'
+      details: '4, Netaji Subhash Road,2nd Floor, Charterd bank building, Kolkata- 700001',
+      subtitle: 'Kolkata, India'
     },
     {
       emoji: '🕒',
@@ -282,7 +283,7 @@ const ContactUs = () => {
               {/* Google Maps Embed */}
               <div className="relative rounded-2xl overflow-hidden shadow-lg">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3771.2!2d72.8777!3d19.0760!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c6306644edc1%3A0x5da4ed8f8d648c69!2sMumbai%2C%20Maharashtra%2C%20India!5e0!3m2!1sen!2sus!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3684.1113475507486!2d88.34661301143262!3d22.574938432797875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02779cd1d27e63%3A0x4b7a26d5b3c2fcc1!2sChartered%20building!5e0!3m2!1sen!2sin!4v1755449054596!5m2!1sen!2sin"
                   width="100%"
                   height="400"
                   style={{ border: 0 }}
@@ -297,8 +298,8 @@ const ContactUs = () => {
                   <div className="flex items-center space-x-3">
                     <span className="text-2xl">📍</span>
                     <div>
-                      <p className="font-semibold text-gray-800">MyChoice Oil Factory</p>
-                      <p className="text-sm text-gray-600">123 Oil Street, Mumbai</p>
+                      <p className="font-semibold text-gray-800">MyChoice Oil</p>
+                      <p className="text-sm text-gray-600">4, Netaji Subhash Road,2nd Floor, Charterd bank building, Kolkata- 700001</p>
                     </div>
                   </div>
                 </div>

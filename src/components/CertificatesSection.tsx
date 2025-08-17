@@ -75,7 +75,7 @@ const CertificatesSection = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-green-50 via-yellow-50 to-orange-50 relative overflow-hidden">
+    <section className="py-16 sm:py-20 bg-gradient-to-br from-green-50 via-yellow-50 to-orange-50 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-10" style={{
@@ -84,19 +84,19 @@ const CertificatesSection = () => {
         }} />
       </div>
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-green-600 to-yellow-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-green-600 to-yellow-600 bg-clip-text text-transparent">
             OUR CERTIFICATES
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
             We maintain the highest standards of quality and safety through internationally recognized certifications
           </p>
         </motion.div>
@@ -110,11 +110,11 @@ const CertificatesSection = () => {
           className="relative max-w-6xl mx-auto"
         >
           {/* Main Certificate Display */}
-          <div className="relative h-96 md:h-[500px] mb-12">
+          <div className="relative mb-8 sm:mb-12">
             {certificates.map((certificate, index) => (
               <motion.div
                 key={certificate.id}
-                className="absolute inset-0"
+                className={`${index === currentCertificateIndex ? 'block' : 'hidden'}`}
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ 
                   opacity: index === currentCertificateIndex ? 1 : 0,
@@ -122,15 +122,15 @@ const CertificatesSection = () => {
                 }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="flex flex-col lg:flex-row items-center justify-center h-full gap-12">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-10 lg:gap-12 px-4">
                   {/* Certificate Image */}
                   <motion.div
-                    className="relative"
+                    className="relative order-2 lg:order-1 w-full lg:w-auto"
                     whileHover={{ scale: 1.05 }}
                   >
-                    <div className="relative">
+                    <div className="relative flex justify-center">
                       {/* Certificate Container */}
-                      <div className="w-80 h-80 relative">
+                      <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 relative">
                         <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-yellow-400/20 rounded-full blur-3xl" />
                         <div className="w-full h-full bg-gradient-to-br from-green-100 to-yellow-100 rounded-2xl border-4 border-green-300/50 shadow-2xl overflow-hidden">
                           <img
@@ -141,13 +141,13 @@ const CertificatesSection = () => {
                           <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                           
                           {/* Certificate Emoji Overlay */}
-                          <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm p-3 rounded-full shadow-lg">
-                            <span className="text-2xl">{certificate.emoji}</span>
+                          <div className="absolute top-3 left-3 sm:top-4 sm:left-4 bg-white/90 backdrop-blur-sm p-2 sm:p-3 rounded-full shadow-lg">
+                            <span className="text-lg sm:text-2xl">{certificate.emoji}</span>
                           </div>
                         </div>
                         
                         {/* Badge */}
-                        <div className="absolute -top-4 -right-4 bg-gradient-to-r from-green-500 to-yellow-500 text-white px-4 py-2 rounded-full text-sm font-bold shadow-lg">
+                        <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 bg-gradient-to-r from-green-500 to-yellow-500 text-white px-3 py-1 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-bold shadow-lg">
                           {certificate.badge}
                         </div>
                       </div>
@@ -155,45 +155,45 @@ const CertificatesSection = () => {
                   </motion.div>
 
                   {/* Certificate Details */}
-                  <div className="text-center lg:text-left max-w-md">
-                    <h3 className="text-2xl md:text-3xl font-bold text-gray-800 mb-4 leading-tight">
+                  <div className="text-center lg:text-left max-w-md order-1 lg:order-2 w-full lg:w-auto">
+                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-5 leading-tight">
                       {certificate.name}
                     </h3>
                     
-                    <p className="text-gray-600 mb-6 leading-relaxed">
+                    <p className="text-sm sm:text-base text-gray-600 mb-5 sm:mb-6 leading-relaxed">
                       {certificate.description}
                     </p>
 
                     {/* Features */}
-                    <div className="grid grid-cols-2 gap-2 mb-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5 sm:mb-6">
                       {certificate.features.map((feature, idx) => (
                         <motion.div
                           key={idx}
                           initial={{ opacity: 0, x: -20 }}
                           animate={{ opacity: 1, x: 0 }}
                           transition={{ delay: idx * 0.1 }}
-                          className="flex items-center text-sm text-gray-700"
+                          className="flex items-start text-xs sm:text-sm text-gray-700"
                         >
-                          <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-yellow-500 rounded-full mr-2" />
-                          {feature}
+                          <div className="w-2 h-2 bg-gradient-to-r from-green-500 to-yellow-500 rounded-full mr-3 mt-1.5 flex-shrink-0" />
+                          <span className="leading-relaxed">{feature}</span>
                         </motion.div>
                       ))}
                     </div>
 
                     {/* Validity */}
-                    <div className="flex items-center justify-center lg:justify-start mb-6">
-                      <div className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-semibold">
+                    <div className="flex items-center justify-center lg:justify-start mb-5 sm:mb-6">
+                      <div className="bg-green-100 text-green-800 px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold">
                         {certificate.validity}
                       </div>
                     </div>
 
                     {/* CTA Button */}
                     <motion.button
-                      className="bg-gradient-to-r from-green-500 to-yellow-500 text-white px-8 py-3 rounded-full font-bold hover:from-green-600 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto lg:mx-0"
+                      className="bg-gradient-to-r from-green-500 to-yellow-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:from-green-600 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto lg:mx-0 text-sm sm:text-base"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <span className="text-xl">📄</span>
+                      <span className="text-lg sm:text-xl">📄</span>
                       <span>View Certificate</span>
                     </motion.button>
                   </div>
@@ -204,29 +204,29 @@ const CertificatesSection = () => {
             {/* Navigation Buttons */}
             <button
               onClick={prevCertificate}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm text-gray-800 p-3 rounded-full hover:bg-white transition-all duration-300 shadow-lg"
+              className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm text-gray-800 p-2 sm:p-3 rounded-full hover:bg-white transition-all duration-300 shadow-lg z-10"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
               </svg>
             </button>
             <button
               onClick={nextCertificate}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm text-gray-800 p-3 rounded-full hover:bg-white transition-all duration-300 shadow-lg"
+              className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm text-gray-800 p-2 sm:p-3 rounded-full hover:bg-white transition-all duration-300 shadow-lg z-10"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
               </svg>
             </button>
           </div>
 
           {/* Certificate Thumbnails */}
-          <div className="flex justify-center space-x-4">
+          <div className="flex justify-center space-x-2 sm:space-x-4 overflow-x-auto pb-2 px-4">
             {certificates.map((certificate, index) => (
               <motion.button
                 key={certificate.id}
                 onClick={() => setCurrentCertificateIndex(index)}
-                className={`relative w-16 h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 ${
+                className={`relative w-12 h-12 sm:w-16 sm:h-16 rounded-xl overflow-hidden border-2 transition-all duration-300 flex-shrink-0 ${
                   index === currentCertificateIndex 
                     ? 'border-green-500 scale-110' 
                     : 'border-gray-300 hover:border-green-400'
@@ -257,18 +257,18 @@ const CertificatesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-16"
+          className="text-center mt-12 sm:mt-16"
         >
-          <div className="bg-gradient-to-r from-green-100 to-yellow-100 rounded-3xl p-8 border border-green-200">
-            <h3 className="text-2xl font-bold text-gray-800 mb-4">
+          <div className="bg-gradient-to-r from-green-100 to-yellow-100 rounded-3xl p-6 sm:p-8 border border-green-200 mx-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-3 sm:mb-4">
               Trust in Our Quality Standards
             </h3>
-            <p className="text-gray-600 mb-6 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 max-w-2xl mx-auto">
               Our commitment to quality is backed by internationally recognized certifications. 
               Every product meets the highest standards of safety and quality.
             </p>
             <motion.button
-              className="bg-gradient-to-r from-green-500 to-yellow-500 text-white px-8 py-4 rounded-full font-bold hover:from-green-600 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl"
+              className="bg-gradient-to-r from-green-500 to-yellow-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:from-green-600 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl text-sm sm:text-base"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
