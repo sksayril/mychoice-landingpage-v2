@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 
 const Hero = () => {
@@ -7,6 +8,7 @@ const Hero = () => {
   const containerRef = useRef(null);
   const { scrollY } = useScroll();
   const isInView = useInView(containerRef, { once: true });
+  const navigate = useNavigate();
   
   const y = useTransform(scrollY, [0, 500], [0, 150]);
   const opacity = useTransform(scrollY, [0, 300], [1, 0]);
@@ -16,6 +18,10 @@ const Hero = () => {
       videoRef.current.play().catch(console.error);
     }
   }, []);
+
+  const handleExploreProducts = () => {
+    navigate('/products');
+  };
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -187,6 +193,7 @@ const Hero = () => {
               className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12"
             >
               <motion.button
+                onClick={handleExploreProducts}
                 className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-2xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
