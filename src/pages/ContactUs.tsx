@@ -6,20 +6,20 @@ const ContactUs = () => {
     {
       emoji: '📞',
       title: 'Phone',
-      details: '03345013784',
+      details: '03368153286',
       subtitle: 'Mon-Fri 9AM-6PM'
     },
     {
       emoji: '📧',
       title: 'Email',
-      details: 'info@my-choice.co.in',
+      details: 'info@mychoiceproduct.com',
       subtitle: 'We reply within 24hrs'
     },
     
     {
       emoji: '📍',
       title: 'Address 1 (Head Office)',
-      details: '3E, 3rd Floor, Gate no 3, 18, Rabindra Sarani, Podder Court Building, PS - Bowbazar, Kolkata - 700001',
+      details: '3rd Floor,Room no E , Gate no 3, 18, Rabindra Sarani, Poddar Court Building, Kolkata - 700001',
       subtitle: 'Kolkata, India'
     },
     {

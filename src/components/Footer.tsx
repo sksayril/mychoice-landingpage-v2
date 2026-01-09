@@ -197,7 +197,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-yellow-500 mt-1" />
                 <div>
                   <p className="mb-3 font-semibold text-yellow-400">Head Office:</p>
-                  <span>3E, 3rd Floor, Gate no 3, 18, Rabindra Sarani, Podder Court Building<br /> PS - Bowbazar, Kolkata - 700001</span>
+                  <span>3rd Floor,Room no E , Gate no 3, 18, Rabindra Sarani<br />  Poddar Court Building, Kolkata - 700001</span>
                 </div>
               </motion.div>
               <motion.div 
