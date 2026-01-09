@@ -1,9 +1,12 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin } from 'lucide-react';
+import PartnerFormModal from './PartnerFormModal';
 
 const Footer = () => {
+  const [showPartnerForm, setShowPartnerForm] = useState(false);
+  const [showComingSoon, setShowComingSoon] = useState(false);
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'Products', path: '/products' },
@@ -192,7 +195,20 @@ const Footer = () => {
                 whileHover={{ x: 5 }}
               >
                 <MapPin className="w-5 h-5 text-yellow-500 mt-1" />
-                <span>4, Netaji Subhash Road,2nd Floor, Charterd bank building<br /> Kolkata- 700001, India</span>
+                <div>
+                  <p className="mb-3 font-semibold text-yellow-400">Head Office:</p>
+                  <span>4, Netaji Subhash Road, 2nd Floor, Chartered Bank Building<br /> Kolkata - 700001, India</span>
+                </div>
+              </motion.div>
+              <motion.div 
+                className="flex items-start space-x-3 text-gray-300"
+                whileHover={{ x: 5 }}
+              >
+                <MapPin className="w-5 h-5 text-yellow-500 mt-1" />
+                <div>
+                  <p className="mb-3 font-semibold text-yellow-400">Branch Office:</p>
+                  <span>3E, 3rd Floor, Gate no 3, 18, Rabindra Sarani, Podder Court Building<br /> PS - Bowbazar, Kolkata - 700001</span>
+                </div>
               </motion.div>
             </div>
           </motion.div>
@@ -215,6 +231,7 @@ const Footer = () => {
               We offer competitive margins, marketing support, and exclusive territories.
             </p>
             <motion.button
+              onClick={() => setShowPartnerForm(true)}
               className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
@@ -228,6 +245,46 @@ const Footer = () => {
                 →
               </motion.span>
             </motion.button>
+          </div>
+        </motion.div>
+
+        {/* Credits Section */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="border-t border-gray-700 pt-8 pb-8"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center md:text-left"
+            >
+              <p className="text-gray-400 text-sm mb-2">
+                <span className="text-yellow-400 font-semibold">Developed by:</span>
+              </p>
+              <p className="text-gray-300 font-semibold text-sm hover:text-yellow-400 transition-colors cursor-pointer">
+                CRIPCOCODE Artificial Intelligence Pvt Ltd
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="text-center md:text-right"
+            >
+              <p className="text-gray-400 text-sm mb-2">
+                <span className="text-yellow-400 font-semibold">Digital Marketing & Branding:</span>
+              </p>
+              <p className="text-gray-300 font-semibold text-sm hover:text-yellow-400 transition-colors cursor-pointer">
+                Sky Star Solution
+              </p>
+            </motion.div>
           </div>
         </motion.div>
 
@@ -290,6 +347,53 @@ const Footer = () => {
           />
         ))}
       </div>
+
+      {/* Partner Form Modal */}
+      <PartnerFormModal
+        isOpen={showPartnerForm}
+        onClose={() => setShowPartnerForm(false)}
+        onSubmitSuccess={() => {
+          setShowComingSoon(true);
+          setTimeout(() => {
+            setShowComingSoon(false);
+          }, 3000);
+        }}
+      />
+
+      {/* Coming Soon Modal */}
+      <AnimatePresence>
+        {showComingSoon && (
+          <motion.div
+            className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-white rounded-3xl p-12 max-w-md w-full shadow-2xl text-center"
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            >
+              <motion.div
+                className="text-6xl mb-6"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 0.6, repeat: Infinity }}
+              >
+                🎉
+              </motion.div>
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">Coming Soon!</h3>
+              <p className="text-gray-600 text-lg mb-2">
+                Thank you for your interest in partnering with MyChoice.
+              </p>
+              <p className="text-gray-600">
+                We'll review your application and get back to you soon!
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </footer>
   );
 };

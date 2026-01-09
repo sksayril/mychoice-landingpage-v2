@@ -2,10 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
+import PartnerFormModal from './PartnerFormModal';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [showPartnerForm, setShowPartnerForm] = useState(false);
+  const [showComingSoon, setShowComingSoon] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -93,6 +96,7 @@ const Navbar = () => {
             
             {/* Become a Distributor Button */}
             <motion.button
+              onClick={() => setShowPartnerForm(true)}
               className={`px-6 py-3 rounded-full font-semibold text-base lg:text-lg transition-all duration-300 ${
                 scrolled 
                   ? 'bg-gradient-to-r from-green-500 to-yellow-500 text-white hover:from-green-600 hover:to-yellow-600 shadow-lg hover:shadow-xl' 
@@ -156,10 +160,13 @@ const Navbar = () => {
                 className="px-4 py-3"
               >
                 <motion.button
+                  onClick={() => {
+                    setShowPartnerForm(true);
+                    setIsOpen(false);
+                  }}
                   className="w-full bg-gradient-to-r from-green-500 to-yellow-500 text-white py-3 px-6 rounded-xl font-semibold hover:from-green-600 hover:to-yellow-600 transition-all duration-300 shadow-lg"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  onClick={() => setIsOpen(false)}
                 >
                   Become a Partner
                 </motion.button>
@@ -168,6 +175,53 @@ const Navbar = () => {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Partner Form Modal */}
+      <PartnerFormModal
+        isOpen={showPartnerForm}
+        onClose={() => setShowPartnerForm(false)}
+        onSubmitSuccess={() => {
+          setShowComingSoon(true);
+          setTimeout(() => {
+            setShowComingSoon(false);
+          }, 3000);
+        }}
+      />
+
+      {/* Coming Soon Modal */}
+      <AnimatePresence>
+        {showComingSoon && (
+          <motion.div
+            className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <motion.div
+              className="bg-white rounded-3xl p-12 max-w-md w-full shadow-2xl text-center"
+              initial={{ scale: 0.5, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.5, opacity: 0 }}
+              transition={{ type: "spring", stiffness: 200, damping: 20 }}
+            >
+              <motion.div
+                className="text-6xl mb-6"
+                animate={{ scale: [1, 1.1, 1] }}
+                transition={{ duration: 0.6, repeat: Infinity }}
+              >
+                🎉
+              </motion.div>
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">Coming Soon!</h3>
+              <p className="text-gray-600 text-lg mb-2">
+                Thank you for your interest in partnering with MyChoice.
+              </p>
+              <p className="text-gray-600">
+                We'll review your application and get back to you soon!
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </motion.nav>
   );
 };
