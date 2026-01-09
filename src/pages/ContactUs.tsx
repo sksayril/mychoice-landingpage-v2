@@ -19,13 +19,14 @@ const ContactUs = () => {
     {
       emoji: '📍',
       title: 'Address 1 (Head Office)',
-      details: '4, Netaji Subhash Road, 2nd Floor, Chartered Bank Building, Kolkata - 700001, India',
+      details: '3E, 3rd Floor, Gate no 3, 18, Rabindra Sarani, Podder Court Building, PS - Bowbazar, Kolkata - 700001',
       subtitle: 'Kolkata, India'
     },
     {
       emoji: '📍',
-      title: 'Address 2 (Branch Office)',
-      details: '3E, 3rd Floor, Gate no 3, 18, Rabindra Sarani, Podder Court Building, PS - Bowbazar, Kolkata - 700001',
+      title: 'Address 2 (Registerd  Office)',
+      
+      details:'4, Netaji Subhash Road, 2nd Floor, Chartered Bank Building, Kolkata - 700001, India' ,
       subtitle: 'Kolkata, India'
     },
     {

@@ -197,7 +197,7 @@ const Footer = () => {
                 <MapPin className="w-5 h-5 text-yellow-500 mt-1" />
                 <div>
                   <p className="mb-3 font-semibold text-yellow-400">Head Office:</p>
-                  <span>4, Netaji Subhash Road, 2nd Floor, Chartered Bank Building<br /> Kolkata - 700001, India</span>
+                  <span>3E, 3rd Floor, Gate no 3, 18, Rabindra Sarani, Podder Court Building<br /> PS - Bowbazar, Kolkata - 700001</span>
                 </div>
               </motion.div>
               <motion.div 
@@ -206,9 +206,10 @@ const Footer = () => {
               >
                 <MapPin className="w-5 h-5 text-yellow-500 mt-1" />
                 <div>
-                  <p className="mb-3 font-semibold text-yellow-400">Branch Office:</p>
-                  <span>3E, 3rd Floor, Gate no 3, 18, Rabindra Sarani, Podder Court Building<br /> PS - Bowbazar, Kolkata - 700001</span>
+                  <p className="mb-3 font-semibold text-yellow-400">Register Office:</p>
+                  <span>4, Netaji Subhash Road, 2nd Floor, Chartered Bank Building<br /> Kolkata - 700001, India</span>
                 </div>
+                
               </motion.div>
             </div>
           </motion.div>
