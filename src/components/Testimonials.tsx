@@ -54,7 +54,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-100 relative overflow-hidden">
+    <section className="py-12 sm:py-16 bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-100 relative overflow-hidden">
       {/* Animated Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-r from-yellow-200/30 to-orange-200/30" />
@@ -86,7 +86,7 @@ const Testimonials = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <motion.div
             initial={{ scale: 0 }}
@@ -97,10 +97,10 @@ const Testimonials = () => {
           >
             Customer Stories
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
             What Our Customers Say
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-700 max-w-3xl mx-auto">
             Hear from thousands of satisfied customers who trust MyChoice for their oil needs
           </p>
         </motion.div>
@@ -110,7 +110,7 @@ const Testimonials = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {testimonials.map((testimonial, index) => (
             <motion.div
@@ -119,7 +119,7 @@ const Testimonials = () => {
               className="group"
             >
               <motion.div
-                className="bg-white/80 backdrop-blur-md rounded-3xl p-8 border border-yellow-200/50 hover:bg-white/90 transition-all duration-500 relative overflow-hidden shadow-xl hover:shadow-2xl"
+                className="bg-white/80 backdrop-blur-md rounded-3xl p-5 border border-yellow-200/50 hover:bg-white/90 transition-all duration-500 relative overflow-hidden shadow-xl hover:shadow-2xl"
                 whileHover={{ 
                   scale: 1.02, 
                   y: -10,
@@ -151,7 +151,7 @@ const Testimonials = () => {
                 />
 
                 {/* Profile Section */}
-                <div className="flex items-center mb-6">
+                <div className="flex items-center mb-4">
                   <motion.div
                     className="relative"
                     whileHover={{ scale: 1.1 }}
@@ -159,7 +159,7 @@ const Testimonials = () => {
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-16 h-16 rounded-full object-cover border-2 border-yellow-400"
+                      className="w-12 h-12 rounded-full object-cover border-2 border-yellow-400"
                     />
                     <motion.div
                       className="absolute inset-0 rounded-full bg-yellow-400/20"
@@ -173,15 +173,15 @@ const Testimonials = () => {
                       }}
                     />
                   </motion.div>
-                  <div className="ml-4">
-                    <h4 className="text-gray-800 font-bold text-lg">{testimonial.name}</h4>
-                    <p className="text-yellow-600 text-sm font-semibold">{testimonial.role}</p>
+                  <div className="ml-3">
+                    <h4 className="text-gray-800 font-bold text-base">{testimonial.name}</h4>
+                    <p className="text-yellow-600 text-xs font-semibold">{testimonial.role}</p>
                     <p className="text-gray-500 text-xs">{testimonial.location}</p>
                   </div>
                 </div>
 
                 {/* Rating */}
-                <div className="flex items-center mb-4">
+                <div className="flex items-center mb-3">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <motion.div
                       key={i}
@@ -190,7 +190,7 @@ const Testimonials = () => {
                       transition={{ delay: 0.1 * i + 0.5 }}
                       whileHover={{ scale: 1.2 }}
                     >
-                      <span className="text-xl">⭐</span>
+                      <span className="text-lg">⭐</span>
                     </motion.div>
                   ))}
                 </div>

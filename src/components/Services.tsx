@@ -75,7 +75,7 @@ const Services = () => {
   };
 
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 via-yellow-50/30 to-white relative overflow-hidden">
+    <section className="py-12 sm:py-16 bg-gradient-to-br from-gray-50 via-yellow-50/30 to-white relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <motion.div
@@ -100,10 +100,10 @@ const Services = () => {
           >
             Our Services
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
             Excellence in Every Service
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             From premium oil products to exceptional customer service, we provide excellence at every touchpoint
           </p>
         </motion.div>
@@ -113,7 +113,7 @@ const Services = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {services.map((service, index) => (
             <motion.div
@@ -122,7 +122,7 @@ const Services = () => {
               className="group relative"
             >
               <motion.div
-                className="bg-yellow-50 rounded-3xl p-8 shadow-lg border border-yellow-200 hover:shadow-2xl transition-all duration-500 relative overflow-hidden h-full"
+                className="bg-yellow-50 rounded-3xl p-5 shadow-lg border border-yellow-200 hover:shadow-2xl transition-all duration-500 relative overflow-hidden h-full"
                 whileHover={{ 
                   scale: 1.03, 
                   y: -10,
@@ -165,7 +165,7 @@ const Services = () => {
                 <div className="relative z-10">
                   {/* Emoji Icon */}
                   <motion.div
-                    className={`inline-flex p-4 rounded-2xl bg-gradient-to-br ${service.color} mb-6`}
+                    className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${service.color} mb-4`}
                     whileHover={{ 
                       scale: 1.1,
                       rotate: [0, -10, 10, 0],
@@ -173,26 +173,26 @@ const Services = () => {
                     }}
                     transition={{ duration: 0.6 }}
                   >
-                    <span className="text-3xl" style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}>
+                    <span className="text-xl" style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}>
                       {service.emoji}
                     </span>
                   </motion.div>
 
                   {/* Title */}
                   <motion.h3 
-                    className="text-2xl font-bold mb-4 text-gray-800 group-hover:text-gray-900"
+                    className="text-lg font-bold mb-2 text-gray-800 group-hover:text-gray-900"
                     whileHover={{ scale: 1.05 }}
                   >
                     {service.title}
                   </motion.h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 mb-6 leading-relaxed">
+                  <p className="text-sm text-gray-600 mb-4 leading-relaxed">
                     {service.description}
                   </p>
 
                   {/* Features */}
-                  <ul className="space-y-3">
+                  <ul className="space-y-2">
                     {service.features.map((feature, idx) => (
                       <motion.li
                         key={feature}

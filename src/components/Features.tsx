@@ -41,7 +41,7 @@ const Features = () => {
   ];
 
   return (
-    <section ref={containerRef} className="py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 relative overflow-hidden">
+    <section ref={containerRef} className="py-12 sm:py-16 bg-gradient-to-br from-yellow-50 via-orange-50 to-amber-50 relative overflow-hidden">
       {/* Animated Background Elements */}
       <motion.div
         style={{ rotate }}
@@ -58,26 +58,26 @@ const Features = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-12"
         >
           <motion.div
             initial={{ scale: 0 }}
             whileInView={{ scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="inline-block bg-yellow-200 text-yellow-800 px-6 py-2 rounded-full text-sm font-semibold mb-4"
+            className="inline-block bg-yellow-200 text-yellow-800 px-4 py-1 rounded-full text-xs font-semibold mb-3"
           >
             Why Choose Us
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-4xl font-bold mb-3 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
             Unmatched Quality & Service
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
             Discover what makes MyChoice the preferred choice for premium oil products
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {features.map((feature, index) => (
             <motion.div
               key={feature.title}
@@ -93,7 +93,7 @@ const Features = () => {
               >
                 <div className="md:flex">
                   <div className="md:flex-shrink-0">
-                    <div className="relative h-48 w-full md:w-48 overflow-hidden">
+                    <div className="relative h-40 w-full md:w-40 overflow-hidden">
                       <motion.img
                         className="h-full w-full object-cover"
                         src={feature.image}
@@ -108,16 +108,16 @@ const Features = () => {
                       />
                     </div>
                   </div>
-                  <div className="p-8">
+                  <div className="p-5">
                     <motion.div
-                      className="bg-gradient-to-br from-yellow-400 to-orange-500 p-3 rounded-xl inline-block mb-4"
+                      className="bg-gradient-to-br from-yellow-400 to-orange-500 p-2 rounded-lg inline-block mb-3"
                       whileHover={{ 
                         rotate: [0, -10, 10, 0],
                         scale: 1.1 
                       }}
                       transition={{ duration: 0.6 }}
                     >
-                      <span className="text-2xl" style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}>
+                      <span className="text-lg" style={{ filter: 'drop-shadow(0 2px 4px rgba(0,0,0,0.3))' }}>
                         {feature.emoji}
                       </span>
                     </motion.div>
@@ -129,7 +129,7 @@ const Features = () => {
                       {feature.title}
                     </motion.h3>
                     
-                    <p className="text-gray-600 leading-relaxed mb-4">
+                    <p className="text-sm text-gray-600 leading-relaxed mb-3">
                       {feature.description}
                     </p>
 

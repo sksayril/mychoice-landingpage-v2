@@ -87,7 +87,7 @@ const ProductsSection = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-100 relative overflow-hidden">
+    <section className="py-12 sm:py-16 bg-gradient-to-br from-yellow-50 via-orange-50 to-yellow-100 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-10" style={{
@@ -103,12 +103,12 @@ const ProductsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-2 sm:mb-4 bg-gradient-to-r from-yellow-600 to-orange-600 bg-clip-text text-transparent">
             OUR PRODUCTS
           </h2>
-          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto px-4">
             Discover our premium range of oils, crafted with traditional excellence and modern quality standards
           </p>
         </motion.div>
@@ -134,7 +134,7 @@ const ProductsSection = () => {
                 }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-10 lg:gap-12 px-4">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-10 px-4">
                    {/* Product Image Container */}
                    <motion.div
                      className="relative order-2 lg:order-1 w-full lg:w-auto"
@@ -142,7 +142,7 @@ const ProductsSection = () => {
                    >
                      <div className="relative flex justify-center">
                        {/* Image Container with Rounded Corners */}
-                       <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 relative">
+                       <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 relative">
                          <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 to-orange-400/20 rounded-3xl blur-3xl" />
                          <div 
                            className="w-full h-full bg-gradient-to-br from-yellow-100 to-orange-100 rounded-3xl border-4 border-yellow-300/50 shadow-2xl overflow-hidden"
@@ -170,16 +170,16 @@ const ProductsSection = () => {
 
                   {/* Product Details */}
                   <div className="text-center lg:text-left max-w-md order-1 lg:order-2 w-full lg:w-auto">
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-5 leading-tight">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2 sm:mb-3 leading-tight">
                       {product.name}
                     </h3>
                     
-                    <p className="text-sm sm:text-base text-gray-600 mb-5 sm:mb-6 leading-relaxed">
+                    <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                       {product.description}
                     </p>
 
                     {/* Features */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5 sm:mb-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3 sm:mb-4">
                       {product.features.map((feature, idx) => (
                         <motion.div
                           key={idx}
@@ -195,7 +195,7 @@ const ProductsSection = () => {
                     </div>
 
                     {/* Rating */}
-                    <div className="flex items-center justify-center lg:justify-start mb-5 sm:mb-6">
+                    <div className="flex items-center justify-center lg:justify-start mb-3 sm:mb-4">
                       <div className="flex items-center space-x-1">
                         {[...Array(5)].map((_, i) => (
                           <span 

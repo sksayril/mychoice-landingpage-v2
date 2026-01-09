@@ -112,25 +112,25 @@ const containerVariants = {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12"
+          className="text-center mb-8"
         >
                       <motion.div
-              className="inline-flex items-center space-x-2 mb-4"
+              className="inline-flex items-center space-x-2 mb-3"
               initial={{ scale: 0 }}
               animate={isInView ? { scale: 1 } : {}}
               transition={{ delay: 0.3, type: "spring", stiffness: 200 }}
             >
-              <span className="text-2xl">✨</span>
+              <span className="text-xl">✨</span>
               <motion.h2 
-                className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-yellow-600 via-orange-500 to-yellow-600 bg-clip-text text-transparent"
+                className="text-2xl md:text-4xl font-bold bg-gradient-to-r from-yellow-600 via-orange-500 to-yellow-600 bg-clip-text text-transparent"
                 whileHover={{ scale: 1.05 }}
               >
                 Trusted by Thousands
               </motion.h2>
-              <span className="text-2xl">✨</span>
+              <span className="text-xl">✨</span>
             </motion.div>
           <motion.p 
-            className="text-lg text-gray-700 max-w-2xl mx-auto font-medium"
+            className="text-base text-gray-700 max-w-2xl mx-auto font-medium"
             initial={{ opacity: 0 }}
             animate={isInView ? { opacity: 1 } : {}}
             transition={{ delay: 0.5 }}
@@ -153,7 +153,7 @@ const containerVariants = {
               className="relative group"
             >
               <motion.div
-                className="relative bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-6 shadow-xl border border-yellow-200/50 hover:border-yellow-300 transition-all duration-500 overflow-hidden backdrop-blur-sm"
+                className="relative bg-gradient-to-br from-yellow-50 to-orange-50 rounded-2xl p-4 shadow-xl border border-yellow-200/50 hover:border-yellow-300 transition-all duration-500 overflow-hidden backdrop-blur-sm"
                 whileHover={{ 
                   scale: 1.08, 
                   y: -10,

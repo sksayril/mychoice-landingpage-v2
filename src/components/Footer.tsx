@@ -14,11 +14,91 @@ const Footer = () => {
     { name: 'Contact', path: '/contact' }
   ];
 
-  const products = [
-    'Sunflower Oil',
-    'Olive Oil',
-    'Coconut Oil',
-    'Groundnut Oil'
+  const oils = [
+    {
+      id: 1,
+      name: {
+        english: 'Premium Sunflower Oil',
+        bengali: 'প্রিমিয়াম সূর্যমুখী তেল'
+      },
+      category: {
+        english: 'Cooking Oil',
+        bengali: 'রান্নার তেল'
+      },
+      price: '₹299',
+      originalPrice: '₹399',
+      badge: 'bestSeller'
+    },
+    {
+      id: 2,
+      name: {
+        english: 'Pure Rice Bran Oil',
+        bengali: 'বিশুদ্ধ চালের তুষের তেল'
+      },
+      category: {
+        english: 'Health Oil',
+        bengali: 'স্বাস্থ্য তেল'
+      },
+      price: '₹189',
+      originalPrice: '₹249',
+      badge: 'popular'
+    },
+    {
+      id: 3,
+      name: {
+        english: 'Kachhi ghani Mustard Oil',
+        bengali: 'কাঁচি ঘানি সরিষার তেল'
+      },
+      category: {
+        english: 'Kachhi ghani',
+        bengali: 'কাঁচি ঘানি সরিষার তেল'
+      },
+      price: '₹159',
+      originalPrice: '₹199',
+      badge: 'traditional'
+    },
+    {
+      id: 4,
+      name: {
+        english: 'Pure Soybean Oil',
+        bengali: 'বিশুদ্ধ সয়াবিন তেল'
+      },
+      category: {
+        english: 'Cooking Oil',
+        bengali: 'রান্নার তেল'
+      },
+      price: '₹179',
+      originalPrice: '₹229',
+      badge: 'healthy'
+    },
+    {
+      id: 5,
+      name: {
+        english: 'Palm Oil',
+        bengali: 'পাম তেল'
+      },
+      category: {
+        english: 'Cooking Oil',
+        bengali: 'রান্নার তেল'
+      },
+      price: '₹299',
+      originalPrice: '₹399',
+      badge: 'popular'
+    },
+    {
+      id: 6,
+      name: {
+        english: 'Pure Mustard Oil',
+        bengali: 'বিশুদ্ধ সরিষার তেল'
+      },
+      category: {
+        english: 'Traditional Oil',
+        bengali: 'ঐতিহ্যগত তেল'
+      },
+      price: '₹289',
+      originalPrice: '₹359',
+      badge: 'traditional'
+    }
   ];
 
   const socialLinks = [
@@ -70,21 +150,21 @@ const Footer = () => {
         }} />
       </div>
 
-      <div className="container mx-auto px-6 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container mx-auto px-6 py-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {/* Company Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="space-y-6"
+            className="space-y-4"
           >
             <div className="flex items-center">
               <motion.img 
                 src="/logo.png"
                 alt="MyChoice Logo"
-                className="h-18 w-28"
+                className="h-14 w-24"
                 whileHover={{ scale: 1.05 }}
               />
             </div>
@@ -96,7 +176,7 @@ const Footer = () => {
                 <motion.a
                   key={index}
                   href={social.href}
-                  className={`w-12 h-12 bg-gradient-to-br ${social.bgGradient} rounded-xl flex items-center justify-center ${social.iconColor} shadow-lg ${social.shadowColor} hover:shadow-xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1`}
+                  className={`w-10 h-10 bg-gradient-to-br ${social.bgGradient} rounded-lg flex items-center justify-center ${social.iconColor} shadow-lg ${social.shadowColor} hover:shadow-xl transition-all duration-300 transform hover:scale-110 hover:-translate-y-1`}
                   whileHover={{ 
                     scale: 1.15, 
                     y: -5,
@@ -114,7 +194,7 @@ const Footer = () => {
                     transition={{ duration: 0.6 }}
                     style={{ transformStyle: 'preserve-3d' }}
                   >
-                    <social.icon className="w-6 h-6" />
+                    <social.icon className="w-5 h-5" />
                   </motion.div>
                 </motion.a>
               ))}
@@ -128,8 +208,8 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h4 className="text-lg font-semibold mb-6 text-yellow-400">Quick Links</h4>
-            <ul className="space-y-3">
+            <h4 className="text-base font-semibold mb-4 text-yellow-400">Quick Links</h4>
+            <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
                   <Link
@@ -152,16 +232,17 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h4 className="text-lg font-semibold mb-6 text-yellow-400">Our Products</h4>
-            <ul className="space-y-3">
-              {products.map((product) => (
-                <li key={product}>
-                  <motion.span 
+            <h4 className="text-base font-semibold mb-4 text-yellow-400">Our Products</h4>
+            <ul className="space-y-2">
+              {oils.map((oil) => (
+                <li key={oil.id}>
+                  <motion.div 
                     className="text-gray-300 hover:text-yellow-400 transition-colors duration-200 cursor-pointer block"
                     whileHover={{ x: 5 }}
                   >
-                    {product}
-                  </motion.span>
+                    <p className="font-semibold text-sm">{oil.name.english}</p>
+                    <p className="text-xs text-gray-400">{oil.category.english}</p>
+                  </motion.div>
                 </li>
               ))}
             </ul>
@@ -174,27 +255,27 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h4 className="text-lg font-semibold mb-6 text-yellow-400">Contact Info</h4>
-            <div className="space-y-4">
+            <h4 className="text-base font-semibold mb-4 text-yellow-400">Contact Info</h4>
+            <div className="space-y-3">
               <motion.div 
                 className="flex items-center space-x-3 text-gray-300"
                 whileHover={{ x: 5 }}
               >
-                <Phone className="w-5 h-5 text-yellow-500" />
-                <span>+91 03345013784</span>
+                <Phone className="w-4 h-4 text-yellow-500" />
+                <span>+91 03368153286</span>
               </motion.div>
               <motion.div 
                 className="flex items-center space-x-3 text-gray-300"
                 whileHover={{ x: 5 }}
               >
-                <Mail className="w-5 h-5 text-yellow-500" />
-                <span>info@my-choice.co.in</span>
+                <Mail className="w-4 h-4 text-yellow-500" />
+                <span>info@mychoiceproduct.com</span>
               </motion.div>
               <motion.div 
                 className="flex items-start space-x-3 text-gray-300"
                 whileHover={{ x: 5 }}
               >
-                <MapPin className="w-5 h-5 text-yellow-500 mt-1" />
+                <MapPin className="w-4 h-4 text-yellow-500 mt-1" />
                 <div>
                   <p className="mb-3 font-semibold text-yellow-400">Head Office:</p>
                   <span>3rd Floor,Room no E , Gate no 3, 18, Rabindra Sarani<br />  Poddar Court Building, Kolkata - 700001</span>
@@ -204,7 +285,7 @@ const Footer = () => {
                 className="flex items-start space-x-3 text-gray-300"
                 whileHover={{ x: 5 }}
               >
-                <MapPin className="w-5 h-5 text-yellow-500 mt-1" />
+                <MapPin className="w-4 h-4 text-yellow-500 mt-1" />
                 <div>
                   <p className="mb-3 font-semibold text-yellow-400">Register Office:</p>
                   <span>4, Netaji Subhash Road, 2nd Floor, Chartered Bank Building<br /> Kolkata - 700001, India</span>
@@ -221,19 +302,19 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="border-t border-gray-700 mt-12 pt-8"
+          className="border-t border-gray-700 mt-8 pt-6"
         >
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="text-center mb-6">
+            <h3 className="text-xl font-bold text-white mb-2">
               Want to Partner With Us?
             </h3>
-            <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+            <p className="text-gray-300 mb-4 max-w-2xl mx-auto text-sm">
               Join our network of successful distributors and grow your business with MyChoice. 
               We offer competitive margins, marketing support, and exclusive territories.
             </p>
             <motion.button
               onClick={() => setShowPartnerForm(true)}
-              className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-8 py-4 rounded-full font-bold text-lg hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto"
+              className="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 py-3 rounded-full font-bold text-base hover:from-yellow-600 hover:to-orange-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >

@@ -171,7 +171,7 @@ const Hero = () => {
 
             <motion.h1
               variants={itemVariants}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+              className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-3 sm:mb-4 leading-tight"
             >
               Pure Excellence,{' '}
               <span className="bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
@@ -181,7 +181,7 @@ const Hero = () => {
 
             <motion.p
               variants={itemVariants}
-              className="text-base sm:text-lg lg:text-xl text-gray-200 mb-6 sm:mb-8 max-w-2xl leading-relaxed"
+              className="text-sm sm:text-base lg:text-lg text-gray-200 mb-4 sm:mb-6 max-w-2xl leading-relaxed"
             >
               Experience the finest quality oil products crafted with precision and care. 
               From kitchen essentials to industrial solutions, MyChoice delivers excellence 
@@ -190,11 +190,11 @@ const Hero = () => {
 
             <motion.div 
               variants={itemVariants}
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12"
+              className="flex flex-col sm:flex-row gap-2 sm:gap-3 mb-6 sm:mb-8"
             >
               <motion.button
                 onClick={handleExploreProducts}
-                className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-2xl"
+                className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white px-5 py-2 sm:px-6 sm:py-3 rounded-full font-semibold text-sm sm:text-base hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 flex items-center justify-center space-x-2 shadow-2xl"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -208,7 +208,7 @@ const Hero = () => {
               </motion.button>
 
               <motion.button
-                className="border-2 border-white/30 text-white px-6 py-3 sm:px-8 sm:py-4 rounded-full font-semibold text-base sm:text-lg hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2 backdrop-blur-sm"
+                className="border-2 border-white/30 text-white px-5 py-2 sm:px-6 sm:py-3 rounded-full font-semibold text-sm sm:text-base hover:bg-white/10 transition-all duration-300 flex items-center justify-center space-x-2 backdrop-blur-sm"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >

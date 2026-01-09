@@ -40,7 +40,7 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           <motion.div 
             className="flex items-center"
             whileHover={{ scale: 1.05 }}
@@ -50,7 +50,7 @@ const Navbar = () => {
               <motion.img 
                 src="/logo.png"
                 alt="MyChoice Logo"
-                className={`h-20 w-30 sm:h-20 sm:w-auto max-w-[160px] sm:max-w-[200px] ${scrolled ? '' : 'drop-shadow-lg'}`}
+                className={`h-16 w-30 sm:h-16 sm:w-auto max-w-[140px] sm:max-w-[160px] ${scrolled ? '' : 'drop-shadow-lg'}`}
                 whileHover={{ scale: 1.1 }}
               />
             </Link>
@@ -65,7 +65,7 @@ const Navbar = () => {
                 className="relative group"
               >
                 <motion.span
-                  className={`text-base lg:text-lg font-semibold transition-colors duration-200 ${
+                  className={`text-sm lg:text-base font-semibold transition-colors duration-200 ${
                     location.pathname === item.path
                       ? 'text-green-600'
                       : scrolled 
@@ -97,7 +97,7 @@ const Navbar = () => {
             {/* Become a Distributor Button */}
             <motion.button
               onClick={() => setShowPartnerForm(true)}
-              className={`px-6 py-3 rounded-full font-semibold text-base lg:text-lg transition-all duration-300 ${
+              className={`px-4 py-2 rounded-full font-semibold text-sm lg:text-base transition-all duration-300 ${
                 scrolled 
                   ? 'bg-gradient-to-r from-green-500 to-yellow-500 text-white hover:from-green-600 hover:to-yellow-600 shadow-lg hover:shadow-xl' 
                   : 'bg-gradient-to-r from-green-500 to-yellow-500 text-white hover:from-green-600 hover:to-yellow-600 shadow-lg hover:shadow-xl'

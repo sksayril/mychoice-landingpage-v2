@@ -75,7 +75,7 @@ const CertificatesSection = () => {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-green-50 via-yellow-50 to-orange-50 relative overflow-hidden">
+    <section className="py-12 sm:py-16 bg-gradient-to-br from-green-50 via-yellow-50 to-orange-50 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 opacity-10" style={{
@@ -122,7 +122,7 @@ const CertificatesSection = () => {
                 }}
                 transition={{ duration: 0.6 }}
               >
-                <div className="flex flex-col lg:flex-row items-center justify-center gap-8 sm:gap-10 lg:gap-12 px-4">
+                <div className="flex flex-col lg:flex-row items-center justify-center gap-6 sm:gap-8 lg:gap-10 px-4">
                   {/* Certificate Image */}
                   <motion.div
                     className="relative order-2 lg:order-1 w-full lg:w-auto"
@@ -130,7 +130,7 @@ const CertificatesSection = () => {
                   >
                     <div className="relative flex justify-center">
                       {/* Certificate Container */}
-                      <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 relative">
+                      <div className="w-56 h-56 sm:w-64 sm:h-64 md:w-72 md:h-72 relative">
                         <div className="absolute inset-0 bg-gradient-to-br from-green-400/20 to-yellow-400/20 rounded-full blur-3xl" />
                         <div className="w-full h-full bg-gradient-to-br from-green-100 to-yellow-100 rounded-2xl border-4 border-green-300/50 shadow-2xl overflow-hidden">
                           <img
@@ -156,16 +156,16 @@ const CertificatesSection = () => {
 
                   {/* Certificate Details */}
                   <div className="text-center lg:text-left max-w-md order-1 lg:order-2 w-full lg:w-auto">
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-4 sm:mb-5 leading-tight">
+                    <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-800 mb-2 sm:mb-3 leading-tight">
                       {certificate.name}
                     </h3>
                     
-                    <p className="text-sm sm:text-base text-gray-600 mb-5 sm:mb-6 leading-relaxed">
+                    <p className="text-sm text-gray-600 mb-3 sm:mb-4 leading-relaxed">
                       {certificate.description}
                     </p>
 
                     {/* Features */}
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-5 sm:mb-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-3 sm:mb-4">
                       {certificate.features.map((feature, idx) => (
                         <motion.div
                           key={idx}
@@ -181,15 +181,15 @@ const CertificatesSection = () => {
                     </div>
 
                     {/* Validity */}
-                    <div className="flex items-center justify-center lg:justify-start mb-5 sm:mb-6">
-                      <div className="bg-green-100 text-green-800 px-3 py-2 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold">
+                    <div className="flex items-center justify-center lg:justify-start mb-3 sm:mb-4">
+                      <div className="bg-green-100 text-green-800 px-3 py-1 sm:px-3 sm:py-1 rounded-full text-xs font-semibold">
                         {certificate.validity}
                       </div>
                     </div>
 
                     {/* CTA Button */}
                     <motion.button
-                      className="bg-gradient-to-r from-green-500 to-yellow-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-bold hover:from-green-600 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto lg:mx-0 text-sm sm:text-base"
+                      className="bg-gradient-to-r from-green-500 to-yellow-500 text-white px-5 sm:px-6 py-2 sm:py-3 rounded-full font-bold hover:from-green-600 hover:to-yellow-600 transition-all duration-300 shadow-lg hover:shadow-xl flex items-center space-x-2 mx-auto lg:mx-0 text-xs sm:text-sm"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
